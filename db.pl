@@ -24,7 +24,7 @@ prix(ch_moulin_maillet_2014,6.85).
 
 conservation(ch_moulin_maillet_2014,'2017-2020').
 
-categorie(ch_moulin_maillet_2014,'Bordeaux').
+categorie(ch_moulin_maillet_2014,'bordeaux').
 
 resume(ch_moulin_maillet_2014,
   [
@@ -57,7 +57,7 @@ prix(ch_fleur_baudron_2014, 7.48).
 
 conservation(ch_fleur_baudron_2014, '2017-2021').
 
-categorie(ch_fleur_baudron_2014, 'Bordeaux').
+categorie(ch_fleur_baudron_2014, 'bordeaux').
 
 resume(ch_fleur_baudron_2014,
   [
@@ -90,7 +90,7 @@ prix(ch_bois_vert_cuvee_elegance_2014, 8.11).
 
 conservation(ch_bois_vert_cuvee_elegance_2014, '2017-2021').
 
-categorie(ch_bois_vert_cuvee_elegance_2014, 'Bordeaux').
+categorie(ch_bois_vert_cuvee_elegance_2014, 'bordeaux').
 
 resume(ch_bois_vert_cuvee_elegance_2014,
   [
@@ -123,7 +123,7 @@ prix(ch_paret_2012, 8,68).
 
 conservation(ch_paret_2012, '2017-2020').
 
-categorie(ch_paret_2012, 'Bordeaux').
+categorie(ch_paret_2012, 'bordeaux').
 
 resume(ch_paret_2012,
   [
@@ -157,7 +157,7 @@ prix(ch_menota_cuvee_montgarede_2014, 9.46).
 
 conservation(ch_menota_cuvee_montgarede_2014, '2017-2023').
 
-categorie(ch_menota_cuvee_montgarede_2014, 'Bordeaux').
+categorie(ch_menota_cuvee_montgarede_2014, 'bordeaux').
 
 resume(ch_menota_cuvee_montgarede_2014,
   [
@@ -190,7 +190,7 @@ prix(madiran_vieilles_vignes_2016, 9.92).
 
 conservation(madiran_vieilles_vignes_2016, '2017-2020').
 
-categorie(madiran_vieilles_vignes_2016, 'Bordeaux').
+categorie(madiran_vieilles_vignes_2016, 'bordeaux').
 
 resume(madiran_vieilles_vignes_2016,
   [
@@ -224,7 +224,7 @@ prix(ch_moulin_neuf_cuvee_prestige_2014, 10.3).
 
 conservation(ch_moulin_neuf_cuvee_prestige_2014, '2017-2024').
 
-categorie(ch_moulin_neuf_cuvee_prestige_2014, 'Bordeaux').
+categorie(ch_moulin_neuf_cuvee_prestige_2014, 'bordeaux').
 
 resume(ch_moulin_neuf_cuvee_prestige_2014,
   [
@@ -259,7 +259,7 @@ prix(ch_milon_la_grave_cuvee_part, 12.54).
 
 conservation(ch_milon_la_grave_cuvee_part, '2017-2020').
 
-categorie(ch_milon_la_grave_cuvee_part, 'Bordeaux').
+categorie(ch_milon_la_grave_cuvee_part, 'bordeaux').
 
 resume(ch_milon_la_grave_cuvee_part,
   [
@@ -293,7 +293,7 @@ prix(ch_roc_de_binet_2010, 12.69).
 
 conservation(ch_roc_de_binet_2010, '2017-2022').
 
-categorie(ch_roc_de_binet_2010, 'Bordeaux').
+categorie(ch_roc_de_binet_2010, 'bordeaux').
 
 resume(ch_milon_la_grave_cuvee_part,
   [
@@ -327,7 +327,7 @@ prix(ch_ruat_petit_poujeaux_2010, 14.37).
 
 conservation(ch_ruat_petit_poujeaux_2010, '2017-2022').
 
-categorie(ch_ruat_petit_poujeaux_2010, 'Bordeaux').
+categorie(ch_ruat_petit_poujeaux_2010, 'bordeaux').
 
 resume(ch_ruat_petit_poujeaux_2010,
   [
@@ -361,7 +361,7 @@ prix(ch_les_polyanthas_2010, 15.06).
 
 conservation(ch_les_polyanthas_2010, '2017-2020').
 
-categorie(ch_les_polyanthas_2010, 'Bordeaux').
+categorie(ch_les_polyanthas_2010, 'bordeaux').
 
 resume(ch_les_polyanthas_2010,
   [
@@ -395,7 +395,7 @@ prix(ch_la_menotte_2012, 15.71).
 
 conservation(ch_la_menotte_2012, '2017-2023').
 
-categorie(ch_la_menotte_2012, 'Bordeaux').
+categorie(ch_la_menotte_2012, 'bordeaux').
 
 resume(ch_la_menotte_2012,
   [
@@ -427,7 +427,7 @@ prix(fleur_de_pomys_2012, 21.36).
 
 conservation(fleur_de_pomys_2012, '2017-2024').
 
-categorie(fleur_de_pomys_2012, 'Bordeaux').
+categorie(fleur_de_pomys_2012, 'bordeaux').
 
 resume(fleur_de_pomys_2012,
   [
@@ -461,7 +461,7 @@ prix(florilege_pauillac_2011, 30.65).
 
 conservation(florilege_pauillac_2011, '2017-2024').
 
-categorie(florilege_pauillac_2011, 'Bordeaux').
+categorie(florilege_pauillac_2011, 'bordeaux').
 
 resume(florilege_pauillac_2011,
   [
@@ -494,7 +494,7 @@ prix(florilege_saint_julien_2011, 30.65).
 
 conservation(florilege_saint_julien_2011, '2017-2025').
 
-categorie(florilege_saint_julien_2011, 'Bordeaux').
+categorie(florilege_saint_julien_2011, 'bordeaux').
 
 resume(florilege_saint_julien_2011,
   [
@@ -527,7 +527,7 @@ prix(florilege_pomerol_2012, 31.04).
 
 conservation(florilege_pomerol_2012, '2017-2025').
 
-categorie(florilege_pomerol_2012, 'Bordeaux').
+categorie(florilege_pomerol_2012, 'bordeaux').
 
 resume(florilege_pomerol_2012,
   [
@@ -566,7 +566,7 @@ prix(syrah_2015, 5.14).
 
 conservation(syrah_2015, '2017-2019').
 
-categorie(syrah_2015, 'Vallée du Rhône et Languedoc').
+categorie(syrah_2015, 'vallee du rhone et languedoc').
 
 resume(florilege_pomerol_2012,
   [
@@ -600,7 +600,7 @@ prix(cotes_rhone_villages_2014, 7.36).
 
 conservation(cotes_rhone_villages_2014, '2017-2019').
 
-categorie(cotes_rhone_villages_2014, 'Vallée du Rhône et Languedoc').
+categorie(cotes_rhone_villages_2014, 'vallee du rhone et languedoc').
 
 resume(cotes_rhone_villages_2014,
   [
@@ -634,7 +634,7 @@ prix(tautavel_2014, 7.37).
 
 conservation(tautavel_2014, '2017-2019').
 
-categorie(tautavel_2014, 'Vallée du Rhône et Languedoc').
+categorie(tautavel_2014, 'vallee du rhone et languedoc').
 
 resume(tautavel_2014,
   [
@@ -667,7 +667,7 @@ prix(lirac_2015, 9.23).
 
 conservation(lirac_2015, '2017-2022').
 
-categorie(lirac_2015, 'Vallée du Rhône et Languedoc').
+categorie(lirac_2015, 'vallee du rhone et languedoc').
 
 resume(lirac_2015,
   [
@@ -700,7 +700,7 @@ prix(cairanne_2014, 9.98).
 
 conservation(cairanne_2014, '2017-2020').
 
-categorie(cairanne_2014, 'Vallée du Rhône et Languedoc').
+categorie(cairanne_2014, 'vallee du rhone et languedoc').
 
 resume(cairanne_2014,
   [
@@ -733,7 +733,7 @@ prix(beaumes_de_venise_2015, 12.39).
 
 conservation(beaumes_de_venise_2015, '2017-2025').
 
-categorie(beaumes_de_venise_2015, 'Vallée du Rhône et Languedoc').
+categorie(beaumes_de_venise_2015, 'vallee du rhone et languedoc').
 
 resume(beaumes_de_venise_2015,
   [
@@ -767,7 +767,7 @@ prix(vacqueyras_2014, 13.92).
 
 conservation(vacqueyras_2014, '2017-2020').
 
-categorie(vacqueyras_2014, 'Vallée du Rhône et Languedoc').
+categorie(vacqueyras_2014, 'vallee du rhone et languedoc').
 
 resume(vacqueyras_2014,
   [
@@ -800,7 +800,7 @@ prix(saint_joseph_2014, 16.34).
 
 conservation(saint_joseph_2014, '2017-2020').
 
-categorie(saint_joseph_2014, 'Vallée du Rhône et Languedoc').
+categorie(saint_joseph_2014, 'vallee du rhone et languedoc').
 
 resume(saint_joseph_2014,
   [
@@ -834,7 +834,7 @@ prix(gigondas_2014, 16.77).
 
 conservation(gigondas_2014, '2017-2022').
 
-categorie(gigondas_2014, 'Vallée du Rhône et Languedoc').
+categorie(gigondas_2014, 'vallee du rhone et languedoc').
 
 resume(gigondas_2014,
   [
@@ -868,7 +868,7 @@ prix(chateauneuf_du_pape_rouge_2013, 23.87).
 
 conservation(chateauneuf_du_pape_rouge_2013, '2017-2021').
 
-categorie(chateauneuf_du_pape_rouge_2013, 'Vallée du Rhône et Languedoc').
+categorie(chateauneuf_du_pape_rouge_2013, 'vallee du rhone et languedoc').
 
 resume(chateauneuf_du_pape_rouge_2013,
   [
@@ -900,7 +900,7 @@ prix(hermitage_rouge_2007, 33.98).
 
 conservation(hermitage_rouge_2007, '2017-2020').
 
-categorie(hermitage_rouge_2007, 'Vallée du Rhône et Languedoc').
+categorie(hermitage_rouge_2007, 'vallee du rhone et languedoc').
 
 resume(hermitage_rouge_2007,
   [
@@ -933,31 +933,31 @@ description(hermitage_rouge_2007,
 /* --------------------------- */
 
 
-nom(coteau_bourguignons_2014, 'Coteaux Bourguignons 2014').
+nom(coteaux_bourguignons_2014, 'Coteaux Bourguignons 2014').
 
-prix(coteau_bourguignons_2014, 7.99).
+prix(coteaux_bourguignons_2014, 7.99).
 
-conservation(coteau_bourguignons_2014, '2017-2020').
+conservation(coteaux_bourguignons_2014, '2017-2020').
 
-categorie(coteau_bourguignons_2014, 'Bourgogne').
+categorie(coteaux_bourguignons_2014, 'bourgogne').
 
-resume(coteau_bourguignons_2014,
+resume(coteaux_bourguignons_2014,
   [
     ['']
   ]).
 
-bouche(coteau_bourguignons_2014,
+bouche(coteaux_bourguignons_2014,
   [
     ['cette intensité de fruit se prolonge en bouche avec des saveurs juteuses', '.']
   ]).
 
-nez(coteau_bourguignons_2014,
+nez(coteaux_bourguignons_2014,
   [
     ['Dès la mise au nez on est sous le charme, avec des arômes de cerise'],
 	['associés a des nuances florales (Violette) et minérales', '.']
   ]).
 
-description(coteau_bourguignons_2014,
+description(coteaux_bourguignons_2014,
   [
     ['L‘ensemble est très plaisant, dans un style gouleyant, rond et léger', '.']
   ]).
@@ -970,7 +970,7 @@ prix(bourgogne_pinot_noir_2014, 11.92).
 
 conservation(bourgogne_pinot_noir_2014, '2017-2022').
 
-categorie(bourgogne_pinot_noir_2014, 'Bourgogne').
+categorie(bourgogne_pinot_noir_2014, 'bourgogne').
 
 resume(coteau_bourguignons_2014,
   [
@@ -1003,7 +1003,7 @@ prix(hautes_cotes_de_nuits_2014, 15.16).
 
 conservation(hautes_cotes_de_nuits_2014, '2017-2022').
 
-categorie(hautes_cotes_de_nuits_2014, 'Bourgogne').
+categorie(hautes_cotes_de_nuits_2014, 'bourgogne').
 
 resume(hautes_cotes_de_nuits_2014,
   [
@@ -1038,7 +1038,7 @@ prix(savigny_les_beaune_2014, 20.46).
 
 conservation(savigny_les_beaune_2014, '2017-2022').
 
-categorie(savigny_les_beaune_2014, 'Bourgogne').
+categorie(savigny_les_beaune_2014, 'bourgogne').
 
 resume(savigny_les_beaune_2014,
   [
@@ -1070,7 +1070,7 @@ prix(savigny_les_beaune_1er_cru_2014, 25.82).
 
 conservation(savigny_les_beaune_1er_cru_2014, '2017-2024').
 
-categorie(savigny_les_beaune_1er_cru_2014, 'Bourgogne').
+categorie(savigny_les_beaune_1er_cru_2014, 'bourgogne').
 
 resume(savigny_les_beaune_1er_cru_2014,
   [
@@ -1103,7 +1103,7 @@ prix(aloxe_corton_2014, 26.02).
 
 conservation(aloxe_corton_2014, '2017-2025').
 
-categorie(aloxe_corton_2014, 'Bourgogne').
+categorie(aloxe_corton_2014, 'bourgogne').
 
 resume(aloxe_corton_2014,
   [
@@ -1136,7 +1136,7 @@ prix(nuits_saint_georges_1er_cru_2013, 42.35).
 
 conservation(nuits_saint_georges_1er_cru_2013, '2017-2025').
 
-categorie(nuits_saint_georges_1er_cru_2013, 'Bourgogne').
+categorie(nuits_saint_georges_1er_cru_2013, 'bourgogne').
 
 resume(nuits_saint_georges_1er_cru_2013,
   [
@@ -1168,7 +1168,7 @@ prix(chambolle_musfigny_1er_cru_2012, 63.85).
 
 conservation(chambolle_musfigny_1er_cru_2012, '2017-2027').
 
-categorie(chambolle_musfigny_1er_cru_2012, 'Bourgogne').
+categorie(chambolle_musfigny_1er_cru_2012, 'bourgogne').
 
 resume(chambolle_musfigny_1er_cru_2012,
   [
@@ -1207,7 +1207,7 @@ prix(chiroubles_2013, 8.41).
 
 conservation(chiroubles_2013, '2017-2019').
 
-categorie(chiroubles_2013, 'Beaujolais').
+categorie(chiroubles_2013, 'beaujolais').
 
 resume(chiroubles_2013,
   [
@@ -1240,7 +1240,7 @@ prix(fleurie_2015, 9).
 
 conservation(fleurie_2015, '2017-2022').
 
-categorie(fleurie_2015, 'Beaujolais').
+categorie(fleurie_2015, 'beaujolais').
 
 resume(fleurie_2015,
   [
@@ -1275,7 +1275,7 @@ prix(moulin_a_vent_2014, 11.4).
 
 conservation(moulin_a_vent_2014, '2017-2020').
 
-categorie(moulin_a_vent_2014, 'Beaujolais').
+categorie(moulin_a_vent_2014, 'beaujolais').
 
 resume(moulin_a_vent_2014,
   [
@@ -1314,7 +1314,7 @@ prix(chinon_vieilles_vignes_2014, 8.39).
 
 conservation(chinon_vieilles_vignes_2014, '2017-2021').
 
-categorie(chinon_vieilles_vignes_2014, 'Val de Loire').
+categorie(chinon_vieilles_vignes_2014, 'val de loire').
 
 resume(chinon_vieilles_vignes_2014,
   [
@@ -1346,7 +1346,7 @@ prix(sancerre_rouge_2015, 15.13).
 
 conservation(sancerre_rouge_2015, '2017-2020').
 
-categorie(sancerre_rouge_2015, 'Val de Loire').
+categorie(sancerre_rouge_2015, 'val de loire').
 
 resume(sancerre_rouge_2015,
   [
@@ -1385,7 +1385,7 @@ prix(les_guignards_2015, 5.30).
 
 conservation(les_guignards_2015, '2017-2019').
 
-categorie(les_guignards_2015, 'Vins blancs').
+categorie(les_guignards_2015, 'vins blancs').
 
 resume(les_guignards_2015,
   [
@@ -1418,7 +1418,7 @@ prix(chardonnay_exception_2016, 6.47).
 
 conservation(chardonnay_exception_2016, '2017-2019').
 
-categorie(chardonnay_exception_2016, 'Vins blancs').
+categorie(chardonnay_exception_2016, 'vins blancs').
 
 resume(chardonnay_exception_2016,
   [
@@ -1451,7 +1451,7 @@ prix(cotes_du_rhone_2016_cuvee_pierre_et_charlotte, 7.02).
 
 conservation(cotes_du_rhone_2016_cuvee_pierre_et_charlotte, '2017-2020').
 
-categorie(cotes_du_rhone_2016_cuvee_pierre_et_charlotte, 'Vins blancs').
+categorie(cotes_du_rhone_2016_cuvee_pierre_et_charlotte, 'vins blancs').
 
 resume(cotes_du_rhone_2016_cuvee_pierre_et_charlotte,
   [
@@ -1484,7 +1484,7 @@ prix(ch_le_druc_2015, 7.62).
 
 conservation(ch_le_druc_2015, '2017-2019').
 
-categorie(ch_le_druc_2015, 'Vins blancs').
+categorie(ch_le_druc_2015, 'vins blancs').
 
 resume(ch_le_druc_2015,
   [
@@ -1517,7 +1517,7 @@ prix(laudun_2016, 8.83).
 
 conservation(laudun_2016, '2017-2020').
 
-categorie(laudun_2016, 'Vins blancs').
+categorie(laudun_2016, 'vins blancs').
 
 resume(laudun_2016,
   [
@@ -1551,7 +1551,7 @@ prix(vouvray_blanc_sec_2016, 10.10).
 
 conservation(vouvray_blanc_sec_2016, '2017-2021').
 
-categorie(vouvray_blanc_sec_2016, 'Vins blancs').
+categorie(vouvray_blanc_sec_2016, 'vins blancs').
 
 resume(vouvray_blanc_sec_2016,
   [
@@ -1583,7 +1583,7 @@ prix(macon_villages_2015, 10.59).
 
 conservation(macon_villages_2015, '2017-2019').
 
-categorie(macon_villages_2015, 'Vins blancs').
+categorie(macon_villages_2015, 'vins blancs').
 
 resume(macon_villages_2015,
   [
@@ -1617,7 +1617,7 @@ prix(pinot_gris_2015, 10.59).
 
 conservation(pinot_gris_2015, '2017-2019').
 
-categorie(pinot_gris_2015, 'Vins blancs').
+categorie(pinot_gris_2015, 'vins blancs').
 
 resume(pinot_gris_2015,
   [
@@ -1647,7 +1647,7 @@ prix(gewurztraminer_2015, 12.28).
 
 conservation(gewurztraminer_2015, '2017-2020').
 
-categorie(gewurztraminer_2015, 'Vins blancs').
+categorie(gewurztraminer_2015, 'vins blancs').
 
 resume(gewurztraminer_2015,
   [
@@ -1680,7 +1680,7 @@ prix(vire_clesse_2016, 12.77).
 
 conservation(vire_clesse_2016, '2017-2020').
 
-categorie(vire_clesse_2016, 'Vins blancs').
+categorie(vire_clesse_2016, 'vins blancs').
 
 resume(vire_clesse_2016,
   [
@@ -1715,7 +1715,7 @@ prix(sancerre_blanc_2015, 16.01).
 
 conservation(sancerre_blanc_2015, '2017-2020').
 
-categorie(sancerre_blanc_2015, 'Vins blancs').
+categorie(sancerre_blanc_2015, 'vins blancs').
 
 resume(sancerre_blanc_2015,
   [
@@ -1748,7 +1748,7 @@ prix(vacqueyras_2016, 16.37).
 
 conservation(vacqueyras_2016, '2017-2021').
 
-categorie(vacqueyras_2016, 'Vins blancs').
+categorie(vacqueyras_2016, 'vins blancs').
 
 resume(vacqueyras_2016,
   [
@@ -1784,7 +1784,7 @@ prix(hautes_cotes_de_beaume_2015, 16.58).
 
 conservation(hautes_cotes_de_beaume_2015, '2017-2021').
 
-categorie(hautes_cotes_de_beaume_2015, 'Vins blancs').
+categorie(hautes_cotes_de_beaume_2015, 'vins blancs').
 
 resume(hautes_cotes_de_beaume_2015,
   [
@@ -1816,7 +1816,7 @@ prix(pouilly_fuisse_2014, 18.67).
 
 conservation(pouilly_fuisse_2014, '2017-2020').
 
-categorie(pouilly_fuisse_2014, 'Vins blancs').
+categorie(pouilly_fuisse_2014, 'vins blancs').
 
 resume(pouilly_fuisse_2014,
   [
@@ -1849,7 +1849,7 @@ prix(chablis_1er_cru_montmains_2014, 21.13).
 
 conservation(chablis_1er_cru_montmains_2014, '2017-2020').
 
-categorie(chablis_1er_cru_montmains_2014, 'Vins blancs').
+categorie(chablis_1er_cru_montmains_2014, 'vins blancs').
 
 resume(chablis_1er_cru_montmains_2014,
   [
@@ -1882,7 +1882,7 @@ prix(condrieu_2015, 32.07).
 
 conservation(condrieu_2015, '2017-2025').
 
-categorie(condrieu_2015, 'Vins blancs').
+categorie(condrieu_2015, 'vins blancs').
 
 resume(condrieu_2015,
   [
@@ -1920,7 +1920,7 @@ prix(cremant_de_loire_brut, 10.95).
 
 conservation(cremant_de_loire_brut, '').
 
-categorie(cremant_de_loire_brut, 'Champagne et Méthode Traditionnelle').
+categorie(cremant_de_loire_brut, 'champagne et methode traditionnelle').
 
 resume(cremant_de_loire_brut,
   [
@@ -1950,7 +1950,7 @@ prix(champagne_brut_reserve, 23.14).
 
 conservation(champagne_brut_reserve, '').
 
-categorie(champagne_brut_reserve, 'Champagne et Méthode Traditionnelle').
+categorie(champagne_brut_reserve, 'champagne et methode traditionnelle').
 
 resume(champagne_brut_reserve,
   [
@@ -1981,7 +1981,7 @@ prix(champagne_extra_brut, 24.27).
 
 conservation(champagne_extra_brut, '').
 
-categorie(champagne_extra_brut, 'Champagne et Méthode Traditionnelle').
+categorie(champagne_extra_brut, 'champagne et methode traditionnelle').
 
 resume(champagne_extra_brut,
   [
@@ -2014,7 +2014,7 @@ prix(champagne_brut_oeil_de_perdrix, 24.47).
 
 conservation(champagne_brut_oeil_de_perdrix, '').
 
-categorie(champagne_brut_oeil_de_perdrix, 'Champagne et Méthode Traditionnelle').
+categorie(champagne_brut_oeil_de_perdrix, 'champagne et methode traditionnelle').
 
 resume(champagne_brut_oeil_de_perdrix,
   [
@@ -2047,7 +2047,7 @@ prix(champagne_brut_rose_de_saignee, 25.23).
 
 conservation(champagne_brut_rose_de_saignee, '').
 
-categorie(champagne_brut_rose_de_saignee, 'Champagne et Méthode Traditionnelle').
+categorie(champagne_brut_rose_de_saignee, 'champagne et methode traditionnelle').
 
 resume(champagne_brut_rose_de_saignee,
   [
@@ -2079,7 +2079,7 @@ prix(champagne_brut_or_blanc, 25.64).
 
 conservation(champagne_brut_or_blanc, '').
 
-categorie(champagne_brut_or_blanc, 'Champagne et Méthode Traditionnelle').
+categorie(champagne_brut_or_blanc, 'champagne et methode traditionnelle').
 
 resume(champagne_brut_or_blanc,
   [
@@ -2111,7 +2111,7 @@ prix(champagne_brut_prestige, 29.22).
 
 conservation(champagne_brut_prestige, '').
 
-categorie(champagne_brut_prestige, 'Champagne et Méthode Traditionnelle').
+categorie(champagne_brut_prestige, 'champagne et methode traditionnelle').
 
 resume(champagne_brut_prestige,
   [
@@ -2149,7 +2149,7 @@ prix(cognac_trois_etoiles, 20.87).
 
 conservation(cognac_trois_etoiles, '').
 
-categorie(cognac_trois_etoiles, 'Cognac').
+categorie(cognac_trois_etoiles, 'cognac').
 
 resume(cognac_trois_etoiles,
   [
@@ -2176,12 +2176,12 @@ description(cognac_trois_etoiles,
 /* --------------------------------------------------------------------------- */
 
 nom(cognac_fine_champagne, 'Cognac "Fine Champagne - VSOP"').
-
+''
 prix(cognac_fine_champagne, 22.26).
 
 conservation(cognac_fine_champagne, '').
 
-categorie(cognac_fine_champagne, 'Cognac').
+categorie(cognac_fine_champagne, 'cognac').
 
 resume(cognac_fine_champagne,
   [
@@ -2213,7 +2213,7 @@ prix(cognac_grand_champagne, 32.28).
 
 conservation(cognac_grand_champagne, '').
 
-categorie(cognac_grand_champagne, 'Cognac').
+categorie(cognac_grand_champagne, 'cognac').
 
 resume(cognac_grand_champagne,
   [
