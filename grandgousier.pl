@@ -23,14 +23,73 @@
 /*                      !!!    A MODIFIER   !!!                          */
 
 produire_reponse([fin],[L1]) :-
-   L1 = [merci, de, m, '\'', avoir, consulte], !.    
+   L1 = [merci, de, m, '\'', avoir, consulte], !.
 
+produire_reponse(L,Rep) :-
+  mclef(M,_), member(M,L),
+  clause(regle_rep(M,_,Pattern,Rep),Body),
+  match_pattern(Pattern,L),
+  call(Body), !.
+/*
 produire_reponse(_,[L1,L2, L3]) :-
    L1 = [je, ne, sais, pas, '.'],
    L2 = [les, etudiants, vont, m, '\'', aider, '.' ],
    L3 = ['vous le verrez !'].
+**/
+
+match_pattern(Pattern,Lmots) :-
+   nom_vins_uniforme(Lmots,L_mots_unif),
+   sublist(Pattern,L_mots_unif).
+
+sublist(SL,L) :-
+   prefix(SL,L), !.
+sublist(SL,[_|T]) :- sublist(SL,T).
+
+nom_vins_uniforme(Lmots,L_mots_unif) :-
+   L1 = Lmots,
+   write(L1),
+   replace_vin([beaumes,de,venise,2015],beaumes_de_venise_2015,L1,L3),
+   replace_vin([les,chaboeufs,2013],les_chaboeufs_2013,L1,L3),
+   L_mots_unif = L3.
+
+replace_vin(L,X,In,Out) :-
+   append(L,Suf,In), !, Out = [X|Suf].
+replace_vin(_,_,[],[]) :- !.
+replace_vin(L,X,[H|In],[H|Out]) :-
+   replace_vin(L,X,In,Out).
 
 
+   regle_rep(bouche,1,
+     [ que, donne, le, Vin, en, bouche ],
+     Rep ) :-
+
+        bouche(Vin,Rep).
+
+   % ----------------------------------------------------------------%
+
+   regle_rep(vins,2,
+     [ auriezvous, des, vins, entre, X, et, Y, eur ],
+     Rep) :-
+
+        lvins_prix_min_max(X,Y,Lvins),
+        rep_lvins_min_max(Lvins,Rep).
+
+   rep_lvins_min_max([], [[ non, '.' ]]).
+   rep_lvins_min_max([H|T], [ [ oui, '.', je, dispose, de ] | L]) :-
+      rep_litems_vin_min_max([H|T],L).
+
+   rep_litems_vin_min_max([],[]) :- !.
+   rep_litems_vin_min_max([(V,P)|L], [Irep|Ll]) :-
+      nom(V,Appellation),
+      Irep = [ '- ', Appellation, '(', P, ' EUR )' ],
+      rep_litems_vin_min_max(L,Ll).
+
+   prix_vin_min_max(Vin,P,Min,Max) :-
+      prix(Vin,P),
+      Min =< P, P =< Max.
+
+   lvins_prix_min_max(Min,Max,Lvins) :-
+      findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
 
 /* --------------------------------------------------------------------- */
 /*                                                                       */
@@ -39,7 +98,7 @@ produire_reponse(_,[L1,L2, L3]) :-
 /*                                                                       */
 /* --------------------------------------------------------------------- */
 
-% lire_question(L_Mots) 
+% lire_question(L_Mots)
 
 lire_question(LMots) :- read_atomics(LMots).
 
@@ -226,24 +285,24 @@ ecrire_reponse(L) :-
 
 % ecrire_li_reponse(Ll,M,E)
 % input : Ll, liste de listes de mots (tout en minuscules)
-%         M, indique si le premier caractere du premier mot de 
+%         M, indique si le premier caractere du premier mot de
 %            la premiere ligne doit etre mis en majuscule (1 si oui, 0 si non)
-%         E, indique le nombre d espaces avant ce premier mot 
+%         E, indique le nombre d espaces avant ce premier mot
 
-ecrire_li_reponse([],_,_) :- 
+ecrire_li_reponse([],_,_) :-
     nl.
 
-ecrire_li_reponse([Li|Lls],Mi,Ei) :- 
+ecrire_li_reponse([Li|Lls],Mi,Ei) :-
    ecrire_ligne(Li,Mi,Ei,Mf),
    ecrire_li_reponse(Lls,Mf,2).
 
 % ecrire_ligne(Li,Mi,Ei,Mf)
 % input : Li, liste de mots a ecrire
 %         Mi, Ei booleens tels que decrits ci-dessus
-% output : Mf, booleen tel que decrit ci-dessus a appliquer 
+% output : Mf, booleen tel que decrit ci-dessus a appliquer
 %          a la ligne suivante, si elle existe
 
-ecrire_ligne([],M,_,M) :- 
+ecrire_ligne([],M,_,M) :-
    nl.
 
 ecrire_ligne([M|L],Mi,Ei,Mf) :-
@@ -290,12 +349,12 @@ fin(L) :- member(fin,L).
 /*                                                                       */
 /* --------------------------------------------------------------------- */
 
-grandgousier :- 
+grandgousier :-
 
    nl, nl, nl,
    write('Bonjour, je suis Grandgousier, GGS pour les intimes,'), nl,
-   write('conseiller en vin. En quoi puis-je vous etre utile ?'), 
-   nl, nl, 
+   write('conseiller en vin. En quoi puis-je vous etre utile ?'),
+   nl, nl,
 
    repeat,
       write('Vous : '),
@@ -303,7 +362,7 @@ grandgousier :-
       produire_reponse(L_Mots,L_ligne_reponse),
       ecrire_reponse(L_ligne_reponse),
    fin(L_Mots), !.
-   
+
 
 /* --------------------------------------------------------------------- */
 /*                                                                       */
@@ -312,13 +371,3 @@ grandgousier :-
 /* --------------------------------------------------------------------- */
 :- ['db'].
 :- grandgousier.
-
-
-
-
-
-
-
-
-
-
