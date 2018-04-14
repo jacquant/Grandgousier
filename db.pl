@@ -18,7 +18,7 @@ mclef(vins,5).
 /*                             */
 /* --------------------------- */
 
-nom(ch_moulin_maillet_2014,'Ch. Moulin de Mallet 2014').
+nom(ch_moulin_maillet_2014,'Ch. Moulin de Maillet 2014').
 
 prix(ch_moulin_maillet_2014,6.85).
 

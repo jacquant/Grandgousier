@@ -110,86 +110,87 @@ nom_vins_uniforme(Lmots,L_mots_unif) :-
    replace_vin([cognac_fine_champagne,2016], cognac_fine_champagne, L58, L59),
    replace_vin([coganc,grand,champagne], cognac_grand_champagne, L59, L60),
 
-   L_mots_unif = L62.
+   L_mots_unif = L60.
 
 replace_vin(L,X,In,Out) :-
    append(L,Suf,In), !, Out = [X|Suf].
-replace_vin(_,_,[],[]) :- !.L,X,[H|In],[H|Out]) :-
+replace_vin(_,_,[],[]) :- !.
+replace_vin(L,X,[H|In],[H|Out]) :-
    replace_vin(L,X,In,Out).
 
 
-   % ----------------------------------------------------------------%
+% ----------------------------------------------------------------%
 
-   regle_rep(bouche, 1,
-    [ que, donne, le, Vin, en, bouche ],
-    Rep ) :-
-   	bouche(Vin,Rep).
+regle_rep(bouche, 1,
+ [ que, donne, le, Vin, en, bouche ],
+ Rep ) :-
+	bouche(Vin,Rep).
 
-   % ----------------------------------------------------------------%
+% ----------------------------------------------------------------%
 
-   regle_rep(nez, 2,
-    [ quel, nez, presente, le, Vin ],
-    Rep ) :-
-      nez(Vin,Rep).
+regle_rep(nez, 2,
+ [ quel, nez, presente, le, Vin ],
+ Rep ) :-
+	nez(Vin,Rep).
 
-   % ----------------------------------------------------------------%
+% ----------------------------------------------------------------%
 
-   regle_rep(vins,3,
-    [ auriezvous, des, vins, entre, X, et, Y, eur ],
-    Rep) :-
-   	lvins_prix_min_max(X,Y,Lvins),
-   	rep_lvins_min_max(Lvins,Rep).
+regle_rep(vins,3,
+ [ auriezvous, des, vins, entre, X, et, Y, eur ],
+ Rep) :-
+	lvins_prix_min_max(X,Y,Lvins),
+	rep_lvins_min_max(Lvins,Rep).
 
-   rep_lvins_min_max([], [[ non, '.' ]]).
-   rep_lvins_min_max([H|T], [ [ oui, '.', je, dispose, de ] | L]) :-
-     rep_litems_vin_min_max([H|T],L).
+rep_lvins_min_max([], [[ non, '.' ]]).
+rep_lvins_min_max([H|T], [ [ oui, '.', je, dispose, de ] | L]) :-
+	rep_litems_vin_min_max([H|T],L).
 
-   rep_litems_vin_min_max([],[]) :- !.
-   rep_litems_vin_min_max([(V,P)|L], [Irep|Ll]) :-
-     nom(V,Appellation),
-     Irep = [ '- ', Appellation, '(', P, ' EUR )' ],
-     rep_litems_vin_min_max(L,Ll).
+rep_litems_vin_min_max([],[]) :- !.
+rep_litems_vin_min_max([(V,P)|L], [Irep|Ll]) :-
+	nom(V,Appellation),
+	Irep = [ '- ', Appellation, '(', P, ' EUR )' ],
+	rep_litems_vin_min_max(L,Ll).
 
-   prix_vin_min_max(Vin,P,Min,Max) :-
-     prix(Vin,P),
-     Min =< P, P =< Max.
+prix_vin_min_max(Vin,P,Min,Max) :-
+	prix(Vin,P),
+	Min =< P, P =< Max.
 
-   lvins_prix_min_max(Min,Max,Lvins) :-
-     findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
+lvins_prix_min_max(Min,Max,Lvins) :-
+	findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
 
-   % ----------------------------------------------------------------%
+% ----------------------------------------------------------------%
 
-   regle_rep(dire, 4,
-    [ pourriezvous, men, dire, plus, sur, Vin ],
-    Rep) :-
-      description(Vin,Rep).
+regle_rep(dire, 4,
+ [ pourriezvous, men, dire, plus, sur, Vin ],
+ Rep) :-
+	description(Vin,Rep).
 
-   % ----------------------------------------------------------------%
+% ----------------------------------------------------------------%
 
-   regle_rep(vins, 5,
-   [ quels, vins, de, Region, avezvous ],
-   Rep) :-
-     lvins_region(Region,Lvins),
-     rep_lvins_region(Lvins,Rep).
+regle_rep(vins, 5,
+ [ quels, vins, de, Region, avezvous ],
+ Rep) :-
+	lvins_region(Region,Lvins),
+	rep_lvins_region(Lvins,Rep).
 
-   rep_lvins_region([], [[ non, '.' ]]).
-   rep_lvins_region([H|T], [ [ oui, '.', je, dispose, de ] | L ]) :-
-    rep_litems_vin_region([H|T],L).
+rep_lvins_region([], [[ je, n, '\'', en, ai pas, '.' ]]).
+rep_lvins_region([H|T], [ [ oui, '.', je, dispose, de ] | L ]) :-
+	rep_litems_vin_region([H|T],L).
 
-   rep_litems_vin_region([],[]) :- !.
-   rep_litems_vin_region([(V,P)|L], [Irep|L1]) :-
-    nom(V,Appellation),
-    Irep = [ '- ', Appelation, '(', P, ' EUR )' ],
-    rep_lvins_region(L,L1).
+rep_litems_vin_region([],[]) :- !.
+rep_litems_vin_region([(V,P)|L], [Irep|L1]) :-
+	nom(V,Appellation),
+	Irep = [ '- ', Appellation, '(', P, ' EUR )' ],
+	rep_litems_vin_region(L,L1).
 
-   vin_region(Vin,P,Region) :-
-    categorie(Vin,Region),
-    prix(Vin,P).
+vin_region(Vin,P,Region) :-
+	categorie(Vin,Region),
+	prix(Vin,P).
 
-   lvins_region(Region,Lvins) :-
-    findall( (Vin,P), vin_region(Vin,P,Region), Lvins ).
+lvins_region(Region,Lvins) :-
+	findall( (Vin,P), vin_region(Vin,P,Region), Lvins ).
 
-   % ----------------------------------------------------------------%
+% ----------------------------------------------------------------%
 
 
 
