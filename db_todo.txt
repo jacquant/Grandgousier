@@ -1,0 +1,6 @@
+Quels vins de région avez-vous?
+Auriez-vous des vins entre X et Y EUR? --> OK
+Pourriez-vous m'en dire plus sur vin?
+Que donne le Nuits-Saint-Georges en bouche ? --> OK
+Quel nez présente le vin ?
+Que recouvre l'appellation nom_appelation?
