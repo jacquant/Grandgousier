@@ -21,15 +21,8 @@
 
 
 /*                      !!!    A MODIFIER   !!!                          */
-mclef(conservation,12).
-mclef(bouche,10).
-mclef(nez,10).
-mclef(prix,10).
-mclef(categorie,7).
-mclef(vin,5).
-mclef(vins,5).
 
-
+:- [db].
 
 produire_reponse([fin],[L1]) :-
    L1 = [merci, de, m, '\'', avoir, consulte], !.
@@ -39,6 +32,7 @@ produire_reponse(L,Rep) :-
   clause(regle_rep(M,_,Pattern,Rep),Body),
   match_pattern(Pattern,L),
   call(Body), !.
+  
 /*
 produire_reponse(_,[L1,L2, L3]) :-
    L1 = [je, ne, sais, pas, '.'],
@@ -56,10 +50,10 @@ sublist(SL,[_|T]) :- sublist(SL,T).
 
 nom_vins_uniforme(Lmots,L_mots_unif) :-
    L1 = Lmots,
-   write(L1),
-   replace_vin([beaumes,de,venise,2015],beaumes_de_venise_2015,L1,L3),
-   replace_vin([les,chaboeufs,2013],les_chaboeufs_2013,L1,L3),
-   L_mots_unif = L3.
+   replace_vin([beaumes,de,venise,2015],beaumes_de_venise_2015,L1,L2),
+   replace_vin([les,chaboeufs,2013],les_chaboeufs_2013,L2,L3),
+   replace_vin([ch,moulin,de,maillet,2014], ch_moulin_maillet_2014, L3, L4),
+   L_mots_unif = L4.
 
 replace_vin(L,X,In,Out) :-
    append(L,Suf,In), !, Out = [X|Suf].
@@ -68,37 +62,38 @@ replace_vin(L,X,[H|In],[H|Out]) :-
    replace_vin(L,X,In,Out).
 
 
-   regle_rep(bouche,1,
-     [ que, donne, le, Vin, en, bouche ],
-     Rep ) :-
+regle_rep(bouche,1,
+ [ que, donne, le, Vin, en, bouche ],
+ Rep ) :-
+	bouche(Vin,Rep).
 
-        bouche(Vin,Rep).
+% ----------------------------------------------------------------%
 
-   % ----------------------------------------------------------------%
+regle_rep(vins,2,
+ [ auriezvous, des, vins, entre, X, et, Y, eur ],
+ Rep) :-
+	lvins_prix_min_max(X,Y,Lvins),
+	rep_lvins_min_max(Lvins,Rep).
 
-   regle_rep(vins,2,
-     [ auriezvous, des, vins, entre, X, et, Y, eur ],
-     Rep) :-
+rep_lvins_min_max([], [[ non, '.' ]]).
+rep_lvins_min_max([H|T], [ [ oui, '.', je, dispose, de ] | L]) :-
+  rep_litems_vin_min_max([H|T],L).
 
-        lvins_prix_min_max(X,Y,Lvins),
-        rep_lvins_min_max(Lvins,Rep).
+rep_litems_vin_min_max([],[]) :- !.
+rep_litems_vin_min_max([(V,P)|L], [Irep|Ll]) :-
+  nom(V,Appellation),
+  Irep = [ '- ', Appellation, '(', P, ' EUR )' ],
+  rep_litems_vin_min_max(L,Ll).
 
-   rep_lvins_min_max([], [[ non, '.' ]]).
-   rep_lvins_min_max([H|T], [ [ oui, '.', je, dispose, de ] | L]) :-
-      rep_litems_vin_min_max([H|T],L).
+prix_vin_min_max(Vin,P,Min,Max) :-
+  prix(Vin,P),
+  Min =< P, P =< Max.
 
-   rep_litems_vin_min_max([],[]) :- !.
-   rep_litems_vin_min_max([(V,P)|L], [Irep|Ll]) :-
-      nom(V,Appellation),
-      Irep = [ '- ', Appellation, '(', P, ' EUR )' ],
-      rep_litems_vin_min_max(L,Ll).
-
-   prix_vin_min_max(Vin,P,Min,Max) :-
-      prix(Vin,P),
-      Min =< P, P =< Max.
-
-   lvins_prix_min_max(Min,Max,Lvins) :-
-      findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
+lvins_prix_min_max(Min,Max,Lvins) :-
+  findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
+  
+  
+  
 
 /* --------------------------------------------------------------------- */
 /*                                                                       */
@@ -378,5 +373,6 @@ grandgousier :-
 /*             ACTIVATION DU PROGRAMME APRES COMPILATION                 */
 /*                                                                       */
 /* --------------------------------------------------------------------- */
-:- [db].
 :- grandgousier.
+
+
