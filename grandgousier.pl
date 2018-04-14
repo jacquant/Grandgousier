@@ -21,6 +21,15 @@
 
 
 /*                      !!!    A MODIFIER   !!!                          */
+mclef(conservation,12).
+mclef(bouche,10).
+mclef(nez,10).
+mclef(prix,10).
+mclef(categorie,7).
+mclef(vin,5).
+mclef(vins,5).
+
+
 
 produire_reponse([fin],[L1]) :-
    L1 = [merci, de, m, '\'', avoir, consulte], !.
@@ -369,5 +378,5 @@ grandgousier :-
 /*             ACTIVATION DU PROGRAMME APRES COMPILATION                 */
 /*                                                                       */
 /* --------------------------------------------------------------------- */
-:- ['db'].
+:- [db].
 :- grandgousier.
