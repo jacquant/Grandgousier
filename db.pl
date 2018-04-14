@@ -4,12 +4,179 @@
 /*                             */
 /* --------------------------- */
 mclef(conservation,12).
+mclef(appellation, 10).
 mclef(bouche,10).
 mclef(nez,10).
 mclef(prix,10).
 mclef(categorie,7).
 mclef(vin,5).
 mclef(vins,5).
+mclef(dire,2).
+
+
+/* --------------------------- */
+/*                             */
+/*       APPELLATIONS          */
+/*                             */
+/* --------------------------- */
+
+appellation('beaujolais',
+  [
+    ['l\'appellation couvre l\'intégralité du vignoble du Beaujolais et' ],
+    ['propose six produits différents, dont le beaujolais nouveau et le' ],
+    ['beaujolais supérieur. Il est fait quasi exclusivement à partir du' ],
+    ['cépage gamay pour les vins rouges et du chardonnay pour les vins'],
+    ['blancs (ces derniers ne représentent que 3 % de la production totale)', '.']
+  ]).
+
+appellation('beaune',
+  [
+    ['le beaune est un vin français d'appellation d'origine contrôlée, produit'],
+    ['sur une partie de la commune de Beaune, en Côte-d\'Or. Il est classé'],
+    ['parmi les appellations communales du vignoble de la côte de Beaune', '.']
+  ]).
+
+appellation('bordeaux',
+  [
+    ['le bordeaux est un vin français d'appellation d'origine contrôlée produit'],
+    ['dans le vignoble de Bordeaux. Il s'agit de l'appellation générique de ce'],
+    ['vaste vignoble : elle peut être revendiquée sous certaines conditions par'],
+    ['tous les vins rouges, rosés et blancs provenant des raisins récoltés sur'],
+    ['les communes viticoles du département de la Gironde, à l\'exception des'],
+    ['zones de palus, des marais et des parties forestières', '.']
+  ]).
+
+appellation('bourgogne',
+  [
+    ['il s\'agit d\'une AOC régionale, elle est donc commune à tout le vignoble'],
+    ['de Bourgogne ; elle comprend quatorze dénominations (bourgogne-montrecul'],
+    [', bourgogne-hautes-côtes-de-beaune, etc.) et quatre produits (blanc,'],
+    [',clairet, rouge, nouveau ou primeur)', '.']
+  ]).
+
+appellation('chablis',
+  [
+    ['il s\'agit de la principale appellation en volume du vignoble de Chablis'],
+    [', avec le petit-chablis et le chablis grand cru', '.']
+  ]).
+
+appellation('champagne',
+  [
+    ['son nom vient de la Champagne, une région du nord-est de la France.'],
+    ['la délimitation géographique, les cépages, les rendements et l'ensemble'],
+    ['de l'élaboration du champagne sont les principales spécificités de'],
+    ['l\'appellation', '.']
+  ]).
+
+appellation('chinon',
+  [
+    ['le chinon est un vin d\'appellation d\'origine contrôlée produit autour'],
+    ['de Chinon, en Indre-et-Loire. La surface représente 2300 hectares avec'],
+    ['comme cépage pour les vins rouges et rosés le cabernet franc N et le'],
+    ['cabernet sauvignon N, et pour les vins blancs le chenin B', '.']
+  ]).
+
+appellation('chiroubles',
+  [
+    ['l\'appellation couvre la commune de Chiroubles, dans le vignoble du'],
+    ['beaujolais. Elle est l\'un des dix crus de ce vignoble, qui sont du nord'],
+    ['au sud : le saint-amour, le juliénas, le chénas, le moulin-à-vent,'],
+    ['le fleurie, le chiroubles, le morgon, le régnié, le brouilly'],
+    ['et le côte-de-brouilly', '.']
+  ]).
+
+appellation('fleurie',
+  [
+    ['l\'appellation couvre la commune de Fleurie, dans le vignoble du Beaujolais.'],
+    ['elle est l\'un des dix crus de ce vignoble, qui sont du nord au sud : le'],
+    ['saint-amour, le juliénas, le chénas, le moulin-à-vent, le fleurie,'],
+    ['le chiroubles, le morgon, le régnié, le brouilly et le côte-de-brouilly', '.']
+  ]).
+
+appellation('gigondas',
+  [
+    ['le gigondas3 est un vin d'appellation d'origine contrôlée produit sur'],
+    ['la commune de Gigondas, dans le département du Vaucluse, au pied des'],
+    ['dentelles de Montmirail', '.']
+  ]).
+
+appellation('haut-médoc',
+  [
+    ['il s\'agit d\'une appellation régionale, avec six appellations communales'],
+    ['enclavées dans son aire d\'appellation : saint-estèphe, pauillac,'],
+    ['saint-julien, moulis-en-médoc, listrac-médoc et margaux', '.']
+  ]).
+
+appellation('hermitage',
+  [
+    ['il s\'agit d\'une appellation du vignoble de la vallée du Rhône'],
+    ['septentrionale, sur la rive gauche du Rhône, enclavée dans l\'appellation'],
+    ['crozes-hermitage, en face de la ville de Tournon-sur-Rhône et de'],
+    ['l\'appellation saint-joseph', '.']
+  ]).
+
+appellation('juliénas',
+  [
+    ['l\'appellation couvre les alentours de Juliénas, dans le vignoble du'],
+    ['beaujolais. Elle est l\'un des dix crus de ce vignoble, qui sont du nord'],
+    ['au sud : le saint-amour, le juliénas, le chénas, le moulin-à-vent, le'],
+    ['fleurie, le chiroubles, le morgon, le régnié, le brouilly et le'],
+    ['côte-de-brouilly', '.']
+  ]).
+
+appellation('languedoc',
+  [
+    ['il s\'agit d\'une appellation régionale, couvrant la presque totalité'],
+    ['du vignoble du Languedoc-Roussillon. Cette appellation remplace celle'],
+    ['des coteaux-du-languedoc depuis 2007. À titre dérogatoire, l\'appellation'],
+    ['coteaux-du-languedoc peut être utilisée jusqu\'en 2017', '.']
+  ]).
+
+appellation('madiran',
+  [
+    ['le vignoble de 1 300 hectares, établi sur des terrains sédimentaires, '],
+    ['produit des vins rouges très puissants et charpentés. Ils accompagnent'],
+    ['la gastronomie locale au canard et les viandes en sauce ou grillées.']
+  ]).
+
+appellation('médoc',
+  [
+    ['le médoc1 est un vin rouge français d\'appellation d\'origine contrôlée'],
+    ['produit dans le vignoble du Médoc (tandis que l\'appellation haut-médoc'],
+    ['couvre uniquement la moitié sud), une des subdivisions du vignoble'],
+    ['de Bordeaux', '.']
+  ]).
+
+appellation('moulin-à-vent',
+  [
+    ['l\appellation couvre une partie des communes de Chénas et de'],
+    ['Romanèche-Thorins, dans le vignoble du Beaujolais. Elle est l\'un des dix'],
+    ['crus de ce vignoble, qui sont du nord au sud : le saint-amour, le'],
+    ['juliénas, le chénas, le moulin-à-vent, le fleurie, le chiroubles, le'],
+    ['morgon, le régnié, le brouilly et le côte-de-brouilly', '.']
+  ]).
+
+appellation('pouilly',
+  [
+    ['l\'aire de production se situe au sud de la Bourgogne ; elle fait partie'],
+    ['du vignoble du Mâconnais, à une dizaine de kilomètres à l\'ouest de Mâcon', '.']
+  ]).
+
+appellation('rasteau',
+  [
+    ['le rasteau est un vin d\'appellation d\'origine contrôlée produit sur les'],
+    ['communes de Cairanne, Rasteau et Sablet, dans le Vaucluse. Pour les vins'],
+    ['rouges, seule la commune de Rasteau a le droit d\'en produire', '.']
+  ]).
+
+appellation('régnié',
+  [
+    ['l\'appellation couvre les communes de Régnié-Durette et de Lantignié,'],
+    ['dans le vignoble du Beaujolais. Elle est l\'un des dix crus de ce vignoble,'],
+    ['qui sont du nord au sud : le saint-amour, le juliénas, le chénas, le'],
+    ['moulin-à-vent, le fleurie, le chiroubles, le morgon, le régnié,'],
+    ['le brouilly et le côte-de-brouilly', '.']
+  ]).
 
 
 /* --------------------------- */
@@ -23,6 +190,8 @@ nom(ch_moulin_maillet_2014,'Ch. Moulin de Maillet 2014').
 prix(ch_moulin_maillet_2014,6.85).
 
 conservation(ch_moulin_maillet_2014,'2017-2020').
+
+quantite(ch_moulin_maillet_2014, 'demi-bouteille').
 
 categorie(ch_moulin_maillet_2014,'bordeaux').
 
@@ -57,6 +226,8 @@ prix(ch_fleur_baudron_2014, 7.48).
 
 conservation(ch_fleur_baudron_2014, '2017-2021').
 
+quantite(ch_fleur_baudron_2014, 'demi-bouteille').
+
 categorie(ch_fleur_baudron_2014, 'bordeaux').
 
 resume(ch_fleur_baudron_2014,
@@ -90,6 +261,8 @@ prix(ch_bois_vert_cuvee_elegance_2014, 8.11).
 
 conservation(ch_bois_vert_cuvee_elegance_2014, '2017-2021').
 
+quantite(ch_bois_vert_cuvee_elegance_2014, 'demi-bouteille').
+
 categorie(ch_bois_vert_cuvee_elegance_2014, 'bordeaux').
 
 resume(ch_bois_vert_cuvee_elegance_2014,
@@ -122,6 +295,8 @@ nom(ch_paret_2012, 'Ch. Paret 2012').
 prix(ch_paret_2012, 8,68).
 
 conservation(ch_paret_2012, '2017-2020').
+
+quantite(ch_paret_2012, 'bouteille').
 
 categorie(ch_paret_2012, 'bordeaux').
 
@@ -157,6 +332,8 @@ prix(ch_menota_cuvee_montgarede_2014, 9.46).
 
 conservation(ch_menota_cuvee_montgarede_2014, '2017-2023').
 
+quantite(ch_menota_cuvee_montgarede_2014, 'bouteille').
+
 categorie(ch_menota_cuvee_montgarede_2014, 'bordeaux').
 
 resume(ch_menota_cuvee_montgarede_2014,
@@ -189,6 +366,8 @@ nom(madiran_vieilles_vignes_2016, 'Madiran Vieilles Vignes 2006').
 prix(madiran_vieilles_vignes_2016, 9.92).
 
 conservation(madiran_vieilles_vignes_2016, '2017-2020').
+
+quantite(madiran_vieilles_vignes_2016, 'bouteille').
 
 categorie(madiran_vieilles_vignes_2016, 'bordeaux').
 
@@ -223,6 +402,8 @@ nom(ch_moulin_neuf_cuvee_prestige_2014, 'Ch. du Moulin Neuf « Cuvée Prestige �
 prix(ch_moulin_neuf_cuvee_prestige_2014, 10.3).
 
 conservation(ch_moulin_neuf_cuvee_prestige_2014, '2017-2024').
+
+quantite(ch_moulin_neuf_cuvee_prestige_2014, 'bouteille').
 
 categorie(ch_moulin_neuf_cuvee_prestige_2014, 'bordeaux').
 
@@ -259,6 +440,8 @@ prix(ch_milon_la_grave_cuvee_part, 12.54).
 
 conservation(ch_milon_la_grave_cuvee_part, '2017-2020').
 
+quantite(ch_milon_la_grave_cuvee_part, 'bouteille').
+
 categorie(ch_milon_la_grave_cuvee_part, 'bordeaux').
 
 resume(ch_milon_la_grave_cuvee_part,
@@ -292,6 +475,8 @@ nom(ch_roc_de_binet_2010, 'Ch. Roc de Binet 2010').
 prix(ch_roc_de_binet_2010, 12.69).
 
 conservation(ch_roc_de_binet_2010, '2017-2022').
+
+quantite(ch_roc_de_binet_2010, 'bouteille').
 
 categorie(ch_roc_de_binet_2010, 'bordeaux').
 
@@ -327,6 +512,8 @@ prix(ch_ruat_petit_poujeaux_2010, 14.37).
 
 conservation(ch_ruat_petit_poujeaux_2010, '2017-2022').
 
+quantite(ch_ruat_petit_poujeaux_2010, 'bouteille').
+
 categorie(ch_ruat_petit_poujeaux_2010, 'bordeaux').
 
 resume(ch_ruat_petit_poujeaux_2010,
@@ -360,6 +547,8 @@ nom(ch_les_polyanthas_2010, 'Ch. Les Polyanthas 2010').
 prix(ch_les_polyanthas_2010, 15.06).
 
 conservation(ch_les_polyanthas_2010, '2017-2020').
+
+quantite(ch_les_polyanthas_2010, 'bouteille').
 
 categorie(ch_les_polyanthas_2010, 'bordeaux').
 
@@ -395,6 +584,8 @@ prix(ch_la_menotte_2012, 15.71).
 
 conservation(ch_la_menotte_2012, '2017-2023').
 
+quantite(ch_la_menotte_2012, 'bouteille').
+
 categorie(ch_la_menotte_2012, 'bordeaux').
 
 resume(ch_la_menotte_2012,
@@ -426,6 +617,8 @@ nom(fleur_de_pomys_2012, 'La Fleur de Pomys 2012').
 prix(fleur_de_pomys_2012, 21.36).
 
 conservation(fleur_de_pomys_2012, '2017-2024').
+
+quantite(fleur_de_pomys_2012, 'bouteille').
 
 categorie(fleur_de_pomys_2012, 'bordeaux').
 
@@ -461,6 +654,8 @@ prix(florilege_pauillac_2011, 30.65).
 
 conservation(florilege_pauillac_2011, '2017-2024').
 
+quantite(florilege_pauillac_2011, 'bouteille').
+
 categorie(florilege_pauillac_2011, 'bordeaux').
 
 resume(florilege_pauillac_2011,
@@ -494,6 +689,8 @@ prix(florilege_saint_julien_2011, 30.65).
 
 conservation(florilege_saint_julien_2011, '2017-2025').
 
+quantite(florilege_saint_julien_2011, 'bouteille').
+
 categorie(florilege_saint_julien_2011, 'bordeaux').
 
 resume(florilege_saint_julien_2011,
@@ -526,6 +723,8 @@ nom(florilege_pomerol_2012, 'Florilège Pomerol 2012').
 prix(florilege_pomerol_2012, 31.04).
 
 conservation(florilege_pomerol_2012, '2017-2025').
+
+quantite(florilege_pomerol_2012, 'bouteille').
 
 categorie(florilege_pomerol_2012, 'bordeaux').
 
@@ -566,6 +765,8 @@ prix(syrah_2015, 5.14).
 
 conservation(syrah_2015, '2017-2019').
 
+quantite(syrah_2015, 'bouteille').
+
 categorie(syrah_2015, 'vallee du rhone et languedoc').
 
 resume(florilege_pomerol_2012,
@@ -599,6 +800,8 @@ nom(cotes_rhone_villages_2014, 'Côtes du Rhône Villages 2014 - "Cuvée Pierre 
 prix(cotes_rhone_villages_2014, 7.36).
 
 conservation(cotes_rhone_villages_2014, '2017-2019').
+
+quantite(cotes_rhone_villages_2014, 'bouteille').
 
 categorie(cotes_rhone_villages_2014, 'vallee du rhone et languedoc').
 
@@ -634,6 +837,8 @@ prix(tautavel_2014, 7.37).
 
 conservation(tautavel_2014, '2017-2019').
 
+quantite(tautavel_2014, 'bouteille').
+
 categorie(tautavel_2014, 'vallee du rhone et languedoc').
 
 resume(tautavel_2014,
@@ -666,6 +871,10 @@ nom(lirac_2015, 'Lirac 2015').
 prix(lirac_2015, 9.23).
 
 conservation(lirac_2015, '2017-2022').
+
+quantite(lirac_2015, 'bouteille').
+
+quantite(lirac_2015, 'demi-bouteille').
 
 categorie(lirac_2015, 'vallee du rhone et languedoc').
 
@@ -700,6 +909,8 @@ prix(cairanne_2014, 9.98).
 
 conservation(cairanne_2014, '2017-2020').
 
+quantite(cairanne_2014, 'bouteille').
+
 categorie(cairanne_2014, 'vallee du rhone et languedoc').
 
 resume(cairanne_2014,
@@ -732,6 +943,8 @@ nom(beaumes_de_venise_2015, 'Beaumes-de-Venise 2015').
 prix(beaumes_de_venise_2015, 12.39).
 
 conservation(beaumes_de_venise_2015, '2017-2025').
+
+quantite(beaumes_de_venise_2015, 'bouteille').
 
 categorie(beaumes_de_venise_2015, 'vallee du rhone et languedoc').
 
@@ -767,6 +980,10 @@ prix(vacqueyras_2014, 13.92).
 
 conservation(vacqueyras_2014, '2017-2020').
 
+quantite(vacqueyras_2014, 'bouteille').
+
+quantite(vacqueyras_2014, 'demi-bouteille').
+
 categorie(vacqueyras_2014, 'vallee du rhone et languedoc').
 
 resume(vacqueyras_2014,
@@ -799,6 +1016,8 @@ nom(saint_joseph_2014, 'Saint-Joseph 2014').
 prix(saint_joseph_2014, 16.34).
 
 conservation(saint_joseph_2014, '2017-2020').
+
+quantite(saint_joseph_2014, 'bouteille').
 
 categorie(saint_joseph_2014, 'vallee du rhone et languedoc').
 
@@ -834,6 +1053,10 @@ prix(gigondas_2014, 16.77).
 
 conservation(gigondas_2014, '2017-2022').
 
+quantite(gigondas_2014, 'bouteille').
+
+quantite(gigondas_2014, 'demi-bouteille').
+
 categorie(gigondas_2014, 'vallee du rhone et languedoc').
 
 resume(gigondas_2014,
@@ -868,6 +1091,10 @@ prix(chateauneuf_du_pape_rouge_2013, 23.87).
 
 conservation(chateauneuf_du_pape_rouge_2013, '2017-2021').
 
+quantite(chateauneuf_du_pape_rouge_2013, 'bouteille').
+
+quantite(chateauneuf_du_pape_rouge_2013, 'demi-bouteille').
+
 categorie(chateauneuf_du_pape_rouge_2013, 'vallee du rhone et languedoc').
 
 resume(chateauneuf_du_pape_rouge_2013,
@@ -899,6 +1126,8 @@ nom(hermitage_rouge_2007, 'Hermitage rouge 2007').
 prix(hermitage_rouge_2007, 33.98).
 
 conservation(hermitage_rouge_2007, '2017-2020').
+
+quantite(hermitage_rouge_2007, 'bouteille').
 
 categorie(hermitage_rouge_2007, 'vallee du rhone et languedoc').
 
@@ -939,6 +1168,8 @@ prix(coteaux_bourguignons_2014, 7.99).
 
 conservation(coteaux_bourguignons_2014, '2017-2020').
 
+quantite(coteaux_bourguignons_2014, 'bouteille').
+
 categorie(coteaux_bourguignons_2014, 'bourgogne').
 
 resume(coteaux_bourguignons_2014,
@@ -969,6 +1200,8 @@ nom(bourgogne_pinot_noir_2014, 'Bourgogne Pinot Noir 2014').
 prix(bourgogne_pinot_noir_2014, 11.92).
 
 conservation(bourgogne_pinot_noir_2014, '2017-2022').
+
+quantite(bourgogne_pinot_noir_2014, 'bouteille').
 
 categorie(bourgogne_pinot_noir_2014, 'bourgogne').
 
@@ -1002,6 +1235,8 @@ nom(hautes_cotes_de_nuits_2014, 'Hautes Côtes de Nuits 2014').
 prix(hautes_cotes_de_nuits_2014, 15.16).
 
 conservation(hautes_cotes_de_nuits_2014, '2017-2022').
+
+quantite(hautes_cotes_de_nuits_2014, 'demi-bouteille').
 
 categorie(hautes_cotes_de_nuits_2014, 'bourgogne').
 
@@ -1038,6 +1273,8 @@ prix(savigny_les_beaune_2014, 20.46).
 
 conservation(savigny_les_beaune_2014, '2017-2022').
 
+quantite(savigny_les_beaune_2014, 'demi-bouteille').
+
 categorie(savigny_les_beaune_2014, 'bourgogne').
 
 resume(savigny_les_beaune_2014,
@@ -1069,6 +1306,8 @@ nom(savigny_les_beaune_1er_cru_2014, 'Savigny—lès-Beaune 1er Cru 2014').
 prix(savigny_les_beaune_1er_cru_2014, 25.82).
 
 conservation(savigny_les_beaune_1er_cru_2014, '2017-2024').
+
+quantite(savigny_les_beaune_1er_cru_2014, 'demi-bouteille').
 
 categorie(savigny_les_beaune_1er_cru_2014, 'bourgogne').
 
@@ -1103,6 +1342,8 @@ prix(aloxe_corton_2014, 26.02).
 
 conservation(aloxe_corton_2014, '2017-2025').
 
+quantite(aloxe_corton_2014, 'demi-bouteille').
+
 categorie(aloxe_corton_2014, 'bourgogne').
 
 resume(aloxe_corton_2014,
@@ -1136,6 +1377,8 @@ prix(nuits_saint_georges_1er_cru_2013, 42.35).
 
 conservation(nuits_saint_georges_1er_cru_2013, '2017-2025').
 
+quantite(nuits_saint_georges_1er_cru_2013, 'bouteille').
+
 categorie(nuits_saint_georges_1er_cru_2013, 'bourgogne').
 
 resume(nuits_saint_georges_1er_cru_2013,
@@ -1167,6 +1410,8 @@ nom(chambolle_musfigny_1er_cru_2012, 'Chambolle—Musﬁgny 1er Cru 2012').
 prix(chambolle_musfigny_1er_cru_2012, 63.85).
 
 conservation(chambolle_musfigny_1er_cru_2012, '2017-2027').
+
+quantite(chambolle_musfigny_1er_cru_2012, 'bouteille').
 
 categorie(chambolle_musfigny_1er_cru_2012, 'bourgogne').
 
@@ -1207,6 +1452,8 @@ prix(chiroubles_2013, 8.41).
 
 conservation(chiroubles_2013, '2017-2019').
 
+quantite(chiroubles_2013, 'bouteille').
+
 categorie(chiroubles_2013, 'beaujolais').
 
 resume(chiroubles_2013,
@@ -1239,6 +1486,8 @@ nom(fleurie_2015, 'Fleurie 2015').
 prix(fleurie_2015, 9).
 
 conservation(fleurie_2015, '2017-2022').
+
+quantite(fleurie_2015, 'bouteille').
 
 categorie(fleurie_2015, 'beaujolais').
 
@@ -1274,6 +1523,8 @@ nom(moulin_a_vent_2014, 'Moulin-à-Vent 2014').
 prix(moulin_a_vent_2014, 11.4).
 
 conservation(moulin_a_vent_2014, '2017-2020').
+
+quantite(moulin_a_vent_2014, 'demi-bouteille').
 
 categorie(moulin_a_vent_2014, 'beaujolais').
 
@@ -1314,6 +1565,8 @@ prix(chinon_vieilles_vignes_2014, 8.39).
 
 conservation(chinon_vieilles_vignes_2014, '2017-2021').
 
+quantite(chinon_vieilles_vignes_2014, 'bouteille').
+
 categorie(chinon_vieilles_vignes_2014, 'val de loire').
 
 resume(chinon_vieilles_vignes_2014,
@@ -1345,6 +1598,8 @@ nom(sancerre_rouge_2015, 'Sancerre rouge 2015').
 prix(sancerre_rouge_2015, 15.13).
 
 conservation(sancerre_rouge_2015, '2017-2020').
+
+quantite(sancerre_rouge_2015, 'bouteille').
 
 categorie(sancerre_rouge_2015, 'val de loire').
 
@@ -1385,6 +1640,8 @@ prix(les_guignards_2015, 5.30).
 
 conservation(les_guignards_2015, '2017-2019').
 
+quantite(les_guignards_2015, 'bouteille').
+
 categorie(les_guignards_2015, 'vins blancs').
 
 resume(les_guignards_2015,
@@ -1417,6 +1674,8 @@ nom(chardonnay_exception_2016, 'Chardonnay Exception 2016 — Vin de Pays d‘Oc
 prix(chardonnay_exception_2016, 6.47).
 
 conservation(chardonnay_exception_2016, '2017-2019').
+
+quantite(chardonnay_exception_2016, 'bouteille').
 
 categorie(chardonnay_exception_2016, 'vins blancs').
 
@@ -1451,6 +1710,8 @@ prix(cotes_du_rhone_2016_cuvee_pierre_et_charlotte, 7.02).
 
 conservation(cotes_du_rhone_2016_cuvee_pierre_et_charlotte, '2017-2020').
 
+quantite(cotes_du_rhone_2016_cuvee_pierre_et_charlotte, 'bouteille').
+
 categorie(cotes_du_rhone_2016_cuvee_pierre_et_charlotte, 'vins blancs').
 
 resume(cotes_du_rhone_2016_cuvee_pierre_et_charlotte,
@@ -1484,13 +1745,14 @@ prix(ch_le_druc_2015, 7.62).
 
 conservation(ch_le_druc_2015, '2017-2019').
 
+quantite(ch_le_druc_2015, 'bouteille').
+
 categorie(ch_le_druc_2015, 'vins blancs').
 
 resume(ch_le_druc_2015,
   [
 	['excellent rapport qualité—prix', '.']
   ]).
-
 
 bouche(ch_le_druc_2015,
   [
@@ -1516,6 +1778,8 @@ nom(laudun_2016, 'Laudun 2016 — Côtes du Rhône Villages').
 prix(laudun_2016, 8.83).
 
 conservation(laudun_2016, '2017-2020').
+
+quantite(laudun_2016, 'bouteille').
 
 categorie(laudun_2016, 'vins blancs').
 
@@ -1551,6 +1815,8 @@ prix(vouvray_blanc_sec_2016, 10.10).
 
 conservation(vouvray_blanc_sec_2016, '2017-2021').
 
+quantite(vouvray_blanc_sec_2016, 'bouteille').
+
 categorie(vouvray_blanc_sec_2016, 'vins blancs').
 
 resume(vouvray_blanc_sec_2016,
@@ -1582,6 +1848,8 @@ nom(macon_villages_2015, 'Mâcon-Villages 2015').
 prix(macon_villages_2015, 10.59).
 
 conservation(macon_villages_2015, '2017-2019').
+
+quantite(macon_villages_2015, 'demi-bouteille').
 
 categorie(macon_villages_2015, 'vins blancs').
 
@@ -1617,6 +1885,8 @@ prix(pinot_gris_2015, 10.59).
 
 conservation(pinot_gris_2015, '2017-2019').
 
+quantite(pinot_gris_2015, 'bouteille').
+
 categorie(pinot_gris_2015, 'vins blancs').
 
 resume(pinot_gris_2015,
@@ -1646,6 +1916,8 @@ nom(gewurztraminer_2015, 'Gewurztraminer 2015').
 prix(gewurztraminer_2015, 12.28).
 
 conservation(gewurztraminer_2015, '2017-2020').
+
+quantite(gewurztraminer_2015, 'bouteille').
 
 categorie(gewurztraminer_2015, 'vins blancs').
 
@@ -1679,6 +1951,8 @@ nom(vire_clesse_2016, 'Viré-Clessé 2016').
 prix(vire_clesse_2016, 12.77).
 
 conservation(vire_clesse_2016, '2017-2020').
+
+quantite(vire_clesse_2016, 'demi-bouteille').
 
 categorie(vire_clesse_2016, 'vins blancs').
 
@@ -1715,6 +1989,8 @@ prix(sancerre_blanc_2015, 16.01).
 
 conservation(sancerre_blanc_2015, '2017-2020').
 
+quantite(sancerre_blanc_2015, 'demi-bouteille').
+
 categorie(sancerre_blanc_2015, 'vins blancs').
 
 resume(sancerre_blanc_2015,
@@ -1747,6 +2023,8 @@ nom(vacqueyras_2016, 'Vacqueyras 2016').
 prix(vacqueyras_2016, 16.37).
 
 conservation(vacqueyras_2016, '2017-2021').
+
+quantite(vacqueyras_2016, 'bouteille').
 
 categorie(vacqueyras_2016, 'vins blancs').
 
@@ -1784,6 +2062,8 @@ prix(hautes_cotes_de_beaume_2015, 16.58).
 
 conservation(hautes_cotes_de_beaume_2015, '2017-2021').
 
+quantite(hautes_cotes_de_beaume_2015, 'bouteille').
+
 categorie(hautes_cotes_de_beaume_2015, 'vins blancs').
 
 resume(hautes_cotes_de_beaume_2015,
@@ -1815,6 +2095,8 @@ nom(pouilly_fuisse_2014, 'Pouilly—Fuissé 2014').
 prix(pouilly_fuisse_2014, 18.67).
 
 conservation(pouilly_fuisse_2014, '2017-2020').
+
+quantite(pouilly_fuisse_2014, 'bouteille').
 
 categorie(pouilly_fuisse_2014, 'vins blancs').
 
@@ -1849,6 +2131,8 @@ prix(chablis_1er_cru_montmains_2014, 21.13).
 
 conservation(chablis_1er_cru_montmains_2014, '2017-2020').
 
+quantite(chablis_1er_cru_montmains_2014, 'bouteille').
+
 categorie(chablis_1er_cru_montmains_2014, 'vins blancs').
 
 resume(chablis_1er_cru_montmains_2014,
@@ -1881,6 +2165,8 @@ nom(condrieu_2015, 'Condrieu 2015').
 prix(condrieu_2015, 32.07).
 
 conservation(condrieu_2015, '2017-2025').
+
+quantite(condrieu_2015, 'bouteille').
 
 categorie(condrieu_2015, 'vins blancs').
 
@@ -1920,6 +2206,8 @@ prix(cremant_de_loire_brut, 10.95).
 
 conservation(cremant_de_loire_brut, '').
 
+quantite(cremant_de_loire_brut, 'bouteille').
+
 categorie(cremant_de_loire_brut, 'champagne et methode traditionnelle').
 
 resume(cremant_de_loire_brut,
@@ -1949,6 +2237,8 @@ nom(champagne_brut_reserve, 'Champagne Brut Réserve - J. VESSELLE À BOUZY').
 prix(champagne_brut_reserve, 23.14).
 
 conservation(champagne_brut_reserve, '').
+
+quantite(champagne_brut_reserve, 'bouteille').
 
 categorie(champagne_brut_reserve, 'champagne et methode traditionnelle').
 
@@ -1980,6 +2270,8 @@ nom(champagne_extra_brut, 'Champagne extra Brut - J. VESSELLE À BOUZY').
 prix(champagne_extra_brut, 24.27).
 
 conservation(champagne_extra_brut, '').
+
+quantite(champagne_extra_brut, 'bouteille').
 
 categorie(champagne_extra_brut, 'champagne et methode traditionnelle').
 
@@ -2014,6 +2306,8 @@ prix(champagne_brut_oeil_de_perdrix, 24.47).
 
 conservation(champagne_brut_oeil_de_perdrix, '').
 
+quantite(champagne_brut_oeil_de_perdrix, 'bouteille').
+
 categorie(champagne_brut_oeil_de_perdrix, 'champagne et methode traditionnelle').
 
 resume(champagne_brut_oeil_de_perdrix,
@@ -2047,6 +2341,8 @@ prix(champagne_brut_rose_de_saignee, 25.23).
 
 conservation(champagne_brut_rose_de_saignee, '').
 
+quantite(champagne_brut_rose_de_saignee, 'bouteille').
+
 categorie(champagne_brut_rose_de_saignee, 'champagne et methode traditionnelle').
 
 resume(champagne_brut_rose_de_saignee,
@@ -2079,6 +2375,8 @@ prix(champagne_brut_or_blanc, 25.64).
 
 conservation(champagne_brut_or_blanc, '').
 
+quantite(champagne_brut_or_blanc, 'bouteille').
+
 categorie(champagne_brut_or_blanc, 'champagne et methode traditionnelle').
 
 resume(champagne_brut_or_blanc,
@@ -2110,6 +2408,8 @@ nom(champagne_brut_prestige, 'Champagne Brut Prestige - GRAND CRU - J. VESSELLE 
 prix(champagne_brut_prestige, 29.22).
 
 conservation(champagne_brut_prestige, '').
+
+quantite(champagne_brut_prestige, 'bouteille').
 
 categorie(champagne_brut_prestige, 'champagne et methode traditionnelle').
 
@@ -2149,6 +2449,8 @@ prix(cognac_trois_etoiles, 20.87).
 
 conservation(cognac_trois_etoiles, '').
 
+quantite(cognac_trois_etoiles, 'bouteille').
+
 categorie(cognac_trois_etoiles, 'cognac').
 
 resume(cognac_trois_etoiles,
@@ -2181,6 +2483,8 @@ prix(cognac_fine_champagne, 22.26).
 
 conservation(cognac_fine_champagne, '').
 
+quantite(cognac_fine_champagne, 'bouteille').
+
 categorie(cognac_fine_champagne, 'cognac').
 
 resume(cognac_fine_champagne,
@@ -2212,6 +2516,8 @@ nom(cognac_grand_champagne, 'Cognac « Grande Champagne » - HORS D\'ÂGE').
 prix(cognac_grand_champagne, 32.28).
 
 conservation(cognac_grand_champagne, '').
+
+quantite(cognac_grand_champagne, 'bouteille').
 
 categorie(cognac_grand_champagne, 'cognac').
 
