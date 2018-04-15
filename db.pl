@@ -1260,8 +1260,8 @@ nez(hautes_cotes_de_nuits_2014,
 description(hautes_cotes_de_nuits_2014,
   [
     ['le Vignoble des Hautes Côtes se situe sur le plateau entre 300 m et 400 m'],
-	['d‘altitude sur les hauteurs de la Côte de Nuits', '.', 'Belle robe brillante'],
-	['.', 'toute l\'harmonie, le charme du Pinot Noir sur un joli terroir qui'],
+	['d‘altitude sur les hauteurs de la Côte de Nuits. Belle robe brillante'],
+	['toute l\'harmonie, le charme du Pinot Noir sur un joli terroir qui'],
 	['lui apporte finesse et personnalité', '.']
   ]).
 
@@ -2432,7 +2432,7 @@ description(champagne_brut_prestige,
   [
     ['cette cuvée 100% Grand Cru Bouzy est remarquable pour sa ﬁnesse et sa'],
     ['puissance. Délicieux à l‘apéritif, mais également en compagnie d\'un repas'],
-    ['(foie gras, prépaiations à base de truffe, ...)', '.']
+    ['(foie gras, préparations à base de truffe, ...)', '.']
   ]).
 
 /* --------------------------------------------------------------------------- */
@@ -2477,7 +2477,7 @@ description(cognac_trois_etoiles,
 
 /* --------------------------------------------------------------------------- */
 
-nom(cognac_fine_champagne, 'Cognac "Fine Champagne - VSOP"').
+nom(cognac_fine_champagne, '« Cognac Fine Champagne - VSOP »').
 
 prix(cognac_fine_champagne, 22.26).
 
