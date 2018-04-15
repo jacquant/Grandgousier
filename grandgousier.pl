@@ -22,6 +22,7 @@
 
 /*                      !!!    A MODIFIER   !!!                          */
 
+:- discontiguous nom/2,prix/2,conservation/2, quantite/2, categorie/2, resume/2, bouche/2, nez/2, description/2.
 :- [db].
 
 produire_reponse([fin],[L1]) :-
@@ -148,7 +149,8 @@ rep_lvins_min_max([H|T], [ [ oui, '.', je, dispose, de ] | L]) :-
 rep_litems_vin_min_max([],[]) :- !.
 rep_litems_vin_min_max([(V,P)|L], [Irep|Ll]) :-
 	nom(V,Appellation),
-	Irep = [ '- ', Appellation, '(', P, ' EUR )' ],
+	quantite(V,Q),
+	Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')' ],
 	rep_litems_vin_min_max(L,Ll).
 
 prix_vin_min_max(Vin,P,Min,Max) :-
@@ -180,7 +182,8 @@ rep_lvins_region([H|T], [ [ oui, '.', je, dispose, de ] | L ]) :-
 rep_litems_vin_region([],[]) :- !.
 rep_litems_vin_region([(V,P)|L], [Irep|L1]) :-
 	nom(V,Appellation),
-	Irep = [ '- ', Appellation, '(', P, ' EUR )' ],
+	quantite(V,Q),
+	Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')' ],
 	rep_litems_vin_region(L,L1).
 
 vin_region(Vin,P,Region) :-
@@ -192,6 +195,10 @@ lvins_region(Region,Lvins) :-
 
 % ----------------------------------------------------------------%
 
+regle_rep(appellation, 6,
+ [ que, recouvre, l, appellation, Appellation ],
+ Rep) :-
+   appellation(Appellation, Rep).
 
 
 /* --------------------------------------------------------------------- */
