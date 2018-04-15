@@ -22,7 +22,7 @@
 
 /*                      !!!    A MODIFIER   !!!                          */
 
-:- discontiguous nom/2,prix/2,conservation/2, quantite/2, categorie/2, resume/2, bouche/2, nez/2, description/2.
+:- discontiguous nom/2,prix/2,conservation/2, quantite/2, categorie/2, resume/2, bouche/2, nez/2, description/2, regle_rep/4.
 :- [db].
 
 produire_reponse([fin],[L1]) :-
@@ -36,7 +36,7 @@ produire_reponse(L,Rep) :-
 
 /*
 produire_reponse(_,[L1,L2, L3]) :-
-   L1 = [je, ne, sais, pas, '.'],
+   L1 = [je, ne, sais, pas, '.'],)
    L2 = [les, etudiants, vont, m, '\'', aider, '.' ],
    L3 = ['vous le verrez !'].
 **/
@@ -175,7 +175,7 @@ regle_rep(vins, 5,
 	lvins_region(Region,Lvins),
 	rep_lvins_region(Lvins,Rep).
 
-rep_lvins_region([], [[ je, n, '\'', en, ai pas, '.' ]]).
+rep_lvins_region([], [[ je, n, '\'', en, ai, pas, '.' ]]).
 rep_lvins_region([H|T], [ [ oui, '.', je, dispose, de ] | L ]) :-
 	rep_litems_vin_region([H|T],L).
 

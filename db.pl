@@ -31,15 +31,15 @@ appellation('beaujolais',
 
 appellation('beaune',
   [
-    ['le beaune est un vin français d'appellation d'origine contrôlée, produit'],
+    ['le beaune est un vin français d\'appellation d\'origine contrôlée, produit'],
     ['sur une partie de la commune de Beaune, en Côte-d\'Or. Il est classé'],
     ['parmi les appellations communales du vignoble de la côte de Beaune', '.']
   ]).
 
 appellation('bordeaux',
   [
-    ['le bordeaux est un vin français d'appellation d'origine contrôlée produit'],
-    ['dans le vignoble de Bordeaux. Il s'agit de l'appellation générique de ce'],
+    ['le bordeaux est un vin français d\'appellation d\'origine contrôlée produit'],
+    ['dans le vignoble de Bordeaux. Il s\'agit de l\'appellation générique de ce'],
     ['vaste vignoble : elle peut être revendiquée sous certaines conditions par'],
     ['tous les vins rouges, rosés et blancs provenant des raisins récoltés sur'],
     ['les communes viticoles du département de la Gironde, à l\'exception des'],
@@ -63,8 +63,8 @@ appellation('chablis',
 appellation('champagne',
   [
     ['son nom vient de la Champagne, une région du nord-est de la France.'],
-    ['la délimitation géographique, les cépages, les rendements et l'ensemble'],
-    ['de l'élaboration du champagne sont les principales spécificités de'],
+    ['la délimitation géographique, les cépages, les rendements et l\'ensemble'],
+    ['de l\'élaboration du champagne sont les principales spécificités de'],
     ['l\'appellation', '.']
   ]).
 
@@ -95,7 +95,7 @@ appellation('fleurie',
 
 appellation('gigondas',
   [
-    ['le gigondas3 est un vin d'appellation d'origine contrôlée produit sur'],
+    ['le gigondas est un vin d\'appellation d\'origine contrôlée produit sur'],
     ['la commune de Gigondas, dans le département du Vaucluse, au pied des'],
     ['dentelles de Montmirail', '.']
   ]).
@@ -2478,7 +2478,7 @@ description(cognac_trois_etoiles,
 /* --------------------------------------------------------------------------- */
 
 nom(cognac_fine_champagne, 'Cognac "Fine Champagne - VSOP"').
-''
+
 prix(cognac_fine_champagne, 22.26).
 
 conservation(cognac_fine_champagne, '').
