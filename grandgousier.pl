@@ -22,7 +22,7 @@
 
 /*                      !!!    A MODIFIER   !!!                          */
 
-:- discontiguous nom/2,prix/2,conservation/2, quantite/2, categorie/2, resume/2, bouche/2, nez/2, description/2, regle_rep/4.
+:- style_check(-discontiguous).
 :- [db].
 
 produire_reponse([fin],[L1]) :-
