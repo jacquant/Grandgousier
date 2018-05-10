@@ -4,6 +4,7 @@
 /*                             */
 /* --------------------------- */
 mclef(conservation,12).
+mclef(accompagne, 11).
 mclef(appellation, 10).
 mclef(bouche,10).
 mclef(nez,10).
@@ -18,12 +19,12 @@ mclef(dire,2).
 /*       ASSOCIATIONS          */
 /*                             */
 /* --------------------------- */
-vin_nourriture('canard', ['un vin rouge chaleureux comme un beaujolais, un pinot noir ou un médoc. On peut aussi l\'envisager avec un blanc, un gewurztraminer', '.'], [chiroubles_2013, fleurie_2015, moulin_a_vent_2014, bourgogne_pinot_noir_2014]).
-vin_nourriture('poulet', ['un vin blanc puissant et gras: côtes du rhône, bourgogne, pinot gris'], [cotes_rhone_villages_2014, pinot_gris_2015, laudun_2016]).
-vin_nourriture('dinde', ['un vin blanc puissant et gras: côtes du rhône, bourgogne, pinot gris'], [macon_villages_2015, pinot_gris_2015, ch_le_druc_2015, pouilly_fuisse_2014]).
-vin_nourriture('boeuf', ['un vin rouge corsé et tannique afin de faire marier les protéines de la viande '], [aloxe_corton_2014, florilege_saint_julien_2011, hautes_cotes_de_nuits_2014]).
-vin_nourriture('veau', ['un vin blanc corsé, gras et amples: bourgogne, sancerre, pinot blanc, mâcon villages. Pour un rouge, il doit être léger et peu tannique: beaujolais, bourgogne, bordeaux'], [sancerre_blanc_2015, coteaux_bourguignons_2014, moulin_a_vent_2014, bourgogne_pinot_noir_2014]).
-vin_nourriture('gibier', ['un  vin dit de chasse comme un chateauneuf du pape, un madiran, un pomerol, un hermitage'], [chateauneuf_du_pape_rouge_2013, florilege_pomerol_2012, madiran_vieilles_vignes_2016, hermitage_rouge_2007]).
+vin_nourriture('canard', ['un vin rouge chaleureux comme un beaujolais, un pinot noir ou un médoc. On peut aussi l\'envisager avec un blanc, un gewurztraminer par exemple.'], [chiroubles_2013, fleurie_2015, moulin_a_vent_2014, bourgogne_pinot_noir_2014]).
+vin_nourriture('poulet', ['un vin blanc puissant et gras: côtes du rhône, bourgogne, pinot gris.'], [cotes_rhone_villages_2014, pinot_gris_2015, laudun_2016]).
+vin_nourriture('dinde', ['un vin blanc puissant et gras: côtes du rhône, bourgogne, pinot gris.'], [macon_villages_2015, pinot_gris_2015, ch_le_druc_2015, pouilly_fuisse_2014]).
+vin_nourriture('boeuf', ['un vin rouge corsé et tannique afin de faire marier les protéines de la viande.'], [aloxe_corton_2014, florilege_saint_julien_2011, hautes_cotes_de_nuits_2014]).
+vin_nourriture('veau', ['un vin blanc corsé, gras et amples: bourgogne, sancerre, pinot blanc, mâcon villages. Pour un rouge, il doit être léger et peu tannique: beaujolais, bourgogne, bordeaux.'], [sancerre_blanc_2015, coteaux_bourguignons_2014, moulin_a_vent_2014, bourgogne_pinot_noir_2014]).
+vin_nourriture('gibier', ['un  vin dit de chasse comme un chateauneuf du pape, un madiran, un pomerol, un hermitage.'], [chateauneuf_du_pape_rouge_2013, florilege_pomerol_2012, madiran_vieilles_vignes_2016, hermitage_rouge_2007]).
 vin_nourriture('porc', ['un vin vif qui fait le contraste avec le gras de la viande: pour les blanc un alsacien, un chablis ou un fleurie. Pour les rouge, un madiran, un médoc ou un pomerol.'], [chablis_1er_cru_montmains_2014, madiran_vieilles_vignes_2016, ch_moulin_neuf_cuvee_prestige_2014, florilege_pomerol_2012]).
 
 

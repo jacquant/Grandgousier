@@ -134,7 +134,7 @@ replace_vin(L,X,[H|In],[H|Out]) :-
 
 % ----------------------------------------------------------------%
 
-regle_rep(conservation, 10,
+regle_rep(conservation, 0,
  [[conservation, _, Vin],
   [conservation,Vin]
  ],
@@ -254,6 +254,23 @@ regle_rep(appellation, 6,
  Rep) :-
    appellation(Appellation, Rep).
 
+ % ----------------------------------------------------------------%
+ regle_rep(accompagne, 7,
+  [[accompagne, _,Viande],
+   [accompagne,Viande]
+  ],
+  Rep) :-
+    vin_nourriture(Viande, Description, Lvins),
+    rep_litems_vin_accompagne(Lvins, LvinsA),
+    union([Description], LvinsA, Rep).
+
+  rep_litems_vin_accompagne([],[]) :- !.
+  rep_litems_vin_accompagne([V|L], [Irep|L1]) :-
+  	nom(V,Appellation),
+    prix(V,P),
+  	quantite(V,Q),
+  	Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')'],
+  	rep_litems_vin_accompagne(L,L1).
 
 /* --------------------------------------------------------------------- */
 /*                                                                       */
