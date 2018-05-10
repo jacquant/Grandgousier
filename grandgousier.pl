@@ -134,6 +134,15 @@ replace_vin(L,X,[H|In],[H|Out]) :-
 
 % ----------------------------------------------------------------%
 
+regle_rep(conservation, 10,
+ [[conservation, _, Vin],
+  [conservation,Vin]
+ ],
+ Rep) :-
+  conservation(Vin, Conservation),
+  Rep = [['la conservation conseillée de ce vin:', Conservation, '.']].
+
+  % ----------------------------------------------------------------%
 regle_rep(bouche, 1,
  [[bouche,_, Vin],
   [Vin, _, bouche]
@@ -148,7 +157,6 @@ regle_rep(nez, 2,
   [Vin, _, nez]
  ],
  Rep) :-
-   write(Vin),
 	nez(Vin,Rep).
 
 % ----------------------------------------------------------------%

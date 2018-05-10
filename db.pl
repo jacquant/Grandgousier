@@ -18,7 +18,7 @@ mclef(dire,2).
 /*       ASSOCIATIONS          */
 /*                             */
 /* --------------------------- */
-vin_nourriture('canard', ['un vin rouge chaleureux comme un beaujolais, un pinot noir ou un médoc. On peut aussi l'envisager avec un blanc, un gewurztraminer.], [chiroubles_2013, fleurie_2015, moulin_a_vent_2014, bourgogne_pinot_noir_2014]).
+vin_nourriture('canard', ['un vin rouge chaleureux comme un beaujolais, un pinot noir ou un médoc. On peut aussi l\'envisager avec un blanc, un gewurztraminer', '.'], [chiroubles_2013, fleurie_2015, moulin_a_vent_2014, bourgogne_pinot_noir_2014]).
 vin_nourriture('poulet', ['un vin blanc puissant et gras: côtes du rhône, bourgogne, pinot gris'], [cotes_rhone_villages_2014, pinot_gris_2015, laudun_2016]).
 vin_nourriture('dinde', ['un vin blanc puissant et gras: côtes du rhône, bourgogne, pinot gris'], [macon_villages_2015, pinot_gris_2015, ch_le_druc_2015, pouilly_fuisse_2014]).
 vin_nourriture('boeuf', ['un vin rouge corsé et tannique afin de faire marier les protéines de la viande '], [aloxe_corton_2014, florilege_saint_julien_2011, hautes_cotes_de_nuits_2014]).
