@@ -81,7 +81,7 @@ nom_vins_uniforme(Lmots,L_mots_unif) :-
    replace_vin([florilege,saint,julien], florilege_saint_julien_2011, L16, L17),
    replace_vin([florilege,pomerol], florilege_pomerol_2012, L17, L18),
    replace_vin([syrah,2015], syrah_2015, L18, L19),
-   replace_vin([cotes,rhone,villages,2014], cotes_rhone_villages_2014, L19, L20),
+   replace_vin([cotes,du,rhone,villages,2014], cotes_rhone_villages_2014, L19, L20),
    replace_vin([tautavel,2014], tautavel_2014, L20, L21),
    replace_vin([lirac,2015], lirac_2015, L21, L22),
    replace_vin([cairanne,2014], cairanne_2014, L22, L23),
