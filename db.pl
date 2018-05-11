@@ -5,6 +5,8 @@
 /* --------------------------- */
 mclef(conservation,12).
 mclef(accompagne, 11).
+mclef(resume,2).
+mclef(resumer,2).
 mclef(appellation, 10).
 mclef(bouche,10).
 mclef(nez,10).

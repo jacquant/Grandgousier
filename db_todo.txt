@@ -1,6 +1,1 @@
-Quels vins de région avez-vous? --> OK
-Auriez-vous des vins entre X et Y EUR? --> OK
-Pourriez-vous m'en dire plus sur vin? --> OK
-Que donne le Nuits-Saint-Georges en bouche ? --> OK
-Quel nez présente le vin ? --> OK
-Que recouvre l'appellation nom_appelation?
+aloxe_corton_2014, florilege_saint_julien_2011, hautes_cotes_de_nuits_2014

@@ -135,110 +135,127 @@ replace_vin(L,X,[H|In],[H|Out]) :-
 % ----------------------------------------------------------------%
 
 regle_rep(conservation, 0,
- [[conservation, _, Vin],
-  [conservation,Vin]
- ],
- Rep) :-
-  conservation(Vin, Conservation),
-  Rep = [['la conservation conseillée de ce vin:', Conservation, '.']].
+[[conservation, _, Vin],
+[conservation,Vin]
+],
+Rep) :-
+conservation(Vin, Conservation),
+Rep = [['la conservation conseillée de ce vin:', Conservation, '.']].
 
-  % ----------------------------------------------------------------%
+% ----------------------------------------------------------------%
 regle_rep(bouche, 1,
- [[bouche,_, Vin],
-  [Vin, _, bouche]
- ],
- Rep ) :-
-	bouche(Vin,Rep).
+[[bouche,_, Vin],
+[Vin, _, bouche]
+],
+Rep ) :-
+bouche(Vin,Rep).
 
 % ----------------------------------------------------------------%
 
 regle_rep(nez, 2,
- [[nez, _, Vin ],
-  [Vin, _, nez]
- ],
- Rep) :-
-	nez(Vin,Rep).
+[[nez, _, Vin ],
+[Vin, _, nez]
+],
+Rep) :-
+nez(Vin,Rep).
 
 % ----------------------------------------------------------------%
 
 regle_rep(vins,3,
- [[vins, entre, X, et, Y, eur],
-  [vins, _, de, X, et, Y, eur]
- ],
- Rep) :-
-	lvins_prix_min_max(X,Y,Lvins),
-	rep_lvins_min_max(Lvins,Rep).
+[[vins, entre, X, et, Y, eur],
+[vins, _, de, X, et, Y, eur]
+],
+Rep) :-
+lvins_prix_min_max(X,Y,Lvins),
+rep_lvins_min_max(Lvins,Rep).
 
 rep_lvins_min_max([], [[ non, '.' ]]).
 rep_lvins_min_max([H|T], [ [ oui, '.', je, dispose, de ] | L]) :-
-	rep_litems_vin_min_max([H|T],L).
+rep_litems_vin_min_max([H|T],L).
 
 rep_litems_vin_min_max([],[]) :- !.
 rep_litems_vin_min_max([(V,P)|L], [Irep|Ll]) :-
-	nom(V,Appellation),
-	quantite(V,Q),
-	Irep = [ '- ', Appellation, '(', P, ' EUR /', Q, ')' ],
-	rep_litems_vin_min_max(L,Ll).
+nom(V,Appellation),
+quantite(V,Q),
+Irep = [ '- ', Appellation, '(', P, ' EUR /', Q, ')' ],
+rep_litems_vin_min_max(L,Ll).
 
 prix_vin_min_max(Vin,P,Min,Max) :-
-	prix(Vin,P),
-	Min =< P, P =< Max.
+prix(Vin,P),
+Min =< P, P =< Max.
 
 lvins_prix_min_max(Min,Max,Lvins) :-
-	findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
+findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
 
 % ----------------------------------------------------------------%
+regle_rep(resume, 8,
+[[resume, _,Vin ],
+[Vin, resume],
+[Vin, _, resume],
+[resume, Vin]
+],
+Rep) :-
+resume(Vin,Rep).
+
+regle_rep(resumer, 8,
+[[resumer, _,Vin ],
+[Vin, resumer],
+[Vin, _, resumer],
+[resumer, Vin]
+],
+Rep) :-
+resume(Vin,Rep).
 
 regle_rep(dire, 4,
- [[dire, _, _,Vin ],
-  [dire, _, Vin]
- ],
- Rep) :-
-	description(Vin,Rep).
+[[dire, _, _,Vin ],
+[dire, _, Vin]
+],
+Rep) :-
+description(Vin,Rep).
 
 % ----------------------------------------------------------------%
 
 regle_rep(vins, 5,
- [[_,autres,vins, _, Region],
-  [_,dautres,vins, _, Region],
-  [_, Region,_, autres,vins],
-  [_, Region,_, dautres,vins]
- ],
- Rep) :-
-	lvins_region(Region,Lvins),
-  length(Lvins, Nb),
-  Nbdemi is Nb div 2,
-  demi_list_sup(Lvins, Nbdemi, LvinsSup),
-	rep_lvins_region(LvinsSup,Rep).
+[[_,autres,vins, _, Region],
+[_,dautres,vins, _, Region],
+[_, Region,_, autres,vins],
+[_, Region,_, dautres,vins]
+],
+Rep) :-
+lvins_region(Region,Lvins),
+length(Lvins, Nb),
+Nbdemi is Nb div 2,
+demi_list_sup(Lvins, Nbdemi, LvinsSup),
+rep_lvins_region(LvinsSup,Rep).
 
 regle_rep(vins, 5,
- [[_,vins, _, Region],
-  [_,Region,_, vins]
- ],
- Rep) :-
-	lvins_region(Region,Lvins),
-  length(Lvins, Nb),
-  Nbdemi is Nb div 2,
-  demi_list_inf(Lvins, Nbdemi, LvinsInf),
-	rep_lvins_region(LvinsInf,Rep).
+[[_,vins, _, Region],
+[_,Region,_, vins]
+],
+Rep) :-
+lvins_region(Region,Lvins),
+length(Lvins, Nb),
+Nbdemi is Nb div 2,
+demi_list_inf(Lvins, Nbdemi, LvinsInf),
+rep_lvins_region(LvinsInf,Rep).
 
 rep_lvins_region([], [[ je, n, '\'', en, ai, pas, '.' ]]).
 rep_lvins_region([H|T], [ [ oui, '.', je, dispose, de ] | L ]) :-
-	rep_litems_vin_region([H|T],L).
+rep_litems_vin_region([H|T],L).
 
 rep_litems_vin_region([],[]) :- !.
 rep_litems_vin_region([(V,P)|L], [Irep|L1]) :-
-	nom(V,Appellation),
-	quantite(V,Q),
-	Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')' ],
-	rep_litems_vin_region(L,L1).
+nom(V,Appellation),
+quantite(V,Q),
+Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')' ],
+rep_litems_vin_region(L,L1).
 
 vin_region(Vin,P,Region) :-
-	categorie(Vin,Region),
-	prix(Vin,P).
+categorie(Vin,Region),
+prix(Vin,P).
 
 lvins_region(Region,Lvins) :-
-	findall( (Vin,P), vin_region(Vin,P,Region), Lvins).
+findall( (Vin,P), vin_region(Vin,P,Region), Lvins).
 
 demi_list_sup(Src,N,L) :- findall(E, (nth1(I,Src,E), I =< N), L).
 demi_list_inf(Src,N,L) :- findall(E, (nth1(I,Src,E), I > N), L).
@@ -246,31 +263,31 @@ demi_list_inf(Src,N,L) :- findall(E, (nth1(I,Src,E), I > N), L).
 % ----------------------------------------------------------------%
 
 regle_rep(appellation, 6,
- [[dire, _, appelation, _, Appellation],
-  [recouvre, _, appelation, _, Appellation],
-  [appelation, _, Appelation,_, recouvre],
-  [details, _, appelation, _, Appelation]
- ],
- Rep) :-
-   appellation(Appellation, Rep).
+[[dire, _, appelation, _, Appellation],
+[recouvre, _, appelation, _, Appellation],
+[appelation, _, Appelation,_, recouvre],
+[details, _, appelation, _, Appelation]
+],
+Rep) :-
+ appellation(Appellation, Rep).
 
- % ----------------------------------------------------------------%
- regle_rep(accompagne, 7,
-  [[accompagne, _,Viande],
-   [accompagne,Viande]
-  ],
-  Rep) :-
-    vin_nourriture(Viande, Description, Lvins),
-    rep_litems_vin_accompagne(Lvins, LvinsA),
-    union([Description], LvinsA, Rep).
+% ----------------------------------------------------------------%
+regle_rep(accompagne, 7,
+[[accompagne, _,Viande],
+ [accompagne,Viande]
+],
+Rep) :-
+  vin_nourriture(Viande, Description, Lvins),
+  rep_litems_vin_accompagne(Lvins, LvinsA),
+  union([Description], LvinsA, Rep).
 
-  rep_litems_vin_accompagne([],[]) :- !.
-  rep_litems_vin_accompagne([V|L], [Irep|L1]) :-
-  	nom(V,Appellation),
-    prix(V,P),
-  	quantite(V,Q),
-  	Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')'],
-  	rep_litems_vin_accompagne(L,L1).
+rep_litems_vin_accompagne([],[]) :- !.
+rep_litems_vin_accompagne([V|L], [Irep|L1]) :-
+	nom(V,Appellation),
+  prix(V,P),
+	quantite(V,Q),
+	Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')'],
+	rep_litems_vin_accompagne(L,L1).
 
 /* --------------------------------------------------------------------- */
 /*                                                                       */
