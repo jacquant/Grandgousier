@@ -220,7 +220,7 @@ resume(ch_moulin_maillet_2014,
 bouche(ch_moulin_maillet_2014,
   [
     ['un joli vin, classique, polyvalent, avec un bel éventail aromatique et' ],
-    ['des tannins fins', '.' ]
+    ['des tanins fins', '.' ]
   ]).
 
 nez(ch_moulin_maillet_2014,
@@ -254,7 +254,7 @@ resume(ch_fleur_baudron_2014,
 
 bouche(ch_fleur_baudron_2014,
   [
-    ['bouche très plaisante, riche, et de beaux tannins associés à boisé bien'],
+    ['bouche très plaisante, riche, et de beaux tanins associés à boisé bien'],
     ['intégré', '.']
   ]).
 
@@ -360,7 +360,7 @@ resume(ch_menota_cuvee_montgarede_2014,
 
 bouche(ch_menota_cuvee_montgarede_2014,
   [
-    ['la texture est ronde et veloutée aux tannins soyeux. L‘ensemble est dense,'],
+    ['la texture est ronde et veloutée aux tanins soyeux. L‘ensemble est dense,'],
     ['d‘un remarquable équilibre. Finale caoaotée aux saveurs généreuses.']
   ]).
 
@@ -407,7 +407,7 @@ nez(madiran_vieilles_vignes_2016,
 
 description(madiran_vieilles_vignes_2016,
   [
-    ['le cépage tannat annonce la couleur : un vin charpenté, riche en tannins.'],
+    ['le cépage tannat annonce la couleur : un vin charpenté, riche en tanins.'],
 	['oui, mais avec du gras. Ce qui en fait un vin certes puissant, mais pas'],
 	['austère', '.']
   ]).
@@ -431,7 +431,7 @@ resume(ch_moulin_neuf_cuvee_prestige_2014,
 
 bouche(ch_moulin_neuf_cuvee_prestige_2014,
   [
-	['la bouche témoigne d‘une belle maturité, avec des tannins mûrs. Joli boisé,'],
+	['la bouche témoigne d‘une belle maturité, avec des tanins mûrs. Joli boisé,'],
 	['bien intégré', '.']
   ]).
 
@@ -506,7 +506,7 @@ resume(ch_milon_la_grave_cuvee_part,
 bouche(ch_roc_de_binet_2010,
   [
     ['vin très riche en saveurs. Sensation de richesse, d‘étoffe, de densité à'],
-    ['l\'attaque. La finale dévoile des tannins puissants mais bien intégrés,'],
+    ['l\'attaque. La finale dévoile des tanins puissants mais bien intégrés,'],
     ['enrobés par le gras du vin. Excellent souvenir', '.']
   ]).
 
@@ -682,7 +682,7 @@ resume(florilege_pauillac_2011,
 
 bouche(florilege_pauillac_2011,
   [
-    ['inévitablement, la bouche est puissante, mais les tannins sont élégants et'],
+    ['inévitablement, la bouche est puissante, mais les tanins sont élégants et'],
     ['bien enrobés. Laisse le souvenir d\'un cru d\'une grande profondeur, à la'],
     ['fois structuré et aimable, d\'une remarquable distinction', '.']
   ]).
@@ -795,7 +795,7 @@ bouche(syrah_2015,
   [
     ['en bouche, il présente un beau caractère, avec des saveurs enrobées de'],
     ['fruits rouges associées à des nuances de réglisse. Un élevage sous bois de'],
-    ['12 mois a permis aux tannins de se fondre et ainsi de laisser en finale'],
+    ['12 mois a permis aux tanins de se fondre et ainsi de laisser en finale'],
     ['le souvenir d\'un vin très harmonieux', '.']
   ]).
 
@@ -937,7 +937,7 @@ resume(cairanne_2014,
 
 bouche(cairanne_2014,
   [
-    ['la bouche est équilibrée avec des tannins soyeux. Finale de caractère,'],
+    ['la bouche est équilibrée avec des tanins soyeux. Finale de caractère,'],
     ['de belle persistance', '.']
   ]).
 
