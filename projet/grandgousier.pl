@@ -1,5 +1,3 @@
-:- use_module(library(lists)).
-
 /* --------------------------------------------------------------------- */
 /*                                                                       */
 /*        PRODUIRE_REPONSE(L_Mots,L_Lignes_reponse) :                    */
@@ -20,109 +18,276 @@
 /*        cet enonce et ce squelette de solution !                       */
 /*                                                                       */
 /* --------------------------------------------------------------------- */
-
-
+sr([beaume|X],[beaumes|Y],X,Y).
+sr([chateau|X],[ch|Y],X,Y).
+sr([st|X],[saint|Y],X,Y).
+sr([premier|X],['1er'|Y],X,Y).
+sr([ch|X],[champagne|Y],X,Y).
+sr([euro|X],[eur|Y],X,Y).
+sr([euros|X],[eur|Y],X,Y).
 /*                      !!!    A MODIFIER   !!!                          */
 
+:- style_check(-discontiguous).
+:- [db].
+
 produire_reponse([fin],[L1]) :-
-   L1 = [merci, de, m, '\'', avoir, consulte], !.    
+   L1 = [merci, de, m, '\'', avoir, consulte], !.
 
 produire_reponse(L,Rep) :-
-%   write(L),
-   mclef(M,_), member(M,L),
-   clause(regle_rep(M,_,Pattern,Rep),Body),
-   match_pattern(Pattern,L),
-   call(Body), !.
+  simplify(L, LS),
+  mclef(M,_), member(M,LS),
+  clause(regle_rep(M,_,LPattern,Rep),Body),
+  check_patterns(LPattern,LS),
+  call(Body), !.
 
-produire_reponse(_,[L1,L2, L3]) :-
-   L1 = [je, ne, sais, pas, '.'],
-   L2 = [les, etudiants, vont, m, '\'', aider, '.' ],
-   L3 = ['vous le verrez !'].
+check_patterns([], _) :- false.
+check_patterns([HeadPattern|Pattern], L):-
+  match_pattern(HeadPattern, L);
+  check_patterns(Pattern, L).
 
+simplify(List,Result) :-
+  sr(List,Result,X,Y), !,
+	simplify(X,Y).
+
+simplify([W|Words],[W|NewWords]) :- simplify(Words,NewWords).
+simplify([],[]).
+
+match_pattern([],_) :- false.
 match_pattern(Pattern,Lmots) :-
    nom_vins_uniforme(Lmots,L_mots_unif),
    sublist(Pattern,L_mots_unif).
 
-sublist(SL,L) :- 
+sublist(SL,L) :-
    prefix(SL,L), !.
 sublist(SL,[_|T]) :- sublist(SL,T).
 
 nom_vins_uniforme(Lmots,L_mots_unif) :-
    L1 = Lmots,
-   replace_vin([beaumes,de,venise,2015],beaumes_de_venise_2015,L1,L2),
-   replace_vin([les,chaboeufs,2013],les_chaboeufs_2013,L2,L3),
-   L_mots_unif = L3.
-   
+   replace_vin([beaumes,de,venise],beaumes_de_venise_2015,L1,L2),
+   replace_vin([chaboeufs],les_chaboeufs_2013,L2,L3),
+   replace_vin([ch,moulin,maillet], ch_moulin_maillet_2014, L3, L4),
+   replace_vin([ch,fleur,baudron], ch_fleur_baudron_2014, L4, L5),
+   replace_vin([ch,paret], ch_paret_2012, L5, L6),
+   replace_vin([ch,menota,cuvee,montgarede], ch_menota_cuvee_montgarede_2014, L6, L7),
+   replace_vin([madiran,vieilles,vignes], madiran_vieilles_vignes_2016, L7, L8),
+   replace_vin([ch,moulin,neuf,cuvee,prestige], ch_moulin_neuf_cuvee_prestige_2014, L8, L9),
+   replace_vin([ch,milon,la,grave,cuvee,part], ch_milon_la_grave_cuvee_part, L9, L10),
+   replace_vin([ch,roc,de,binet], ch_roc_de_binet_2010, L10, L11),
+   replace_vin([ch,ruat,petit,poujeaux], ch_ruat_petit_poujeaux_2010, L11, L12),
+   replace_vin([ch,les,polyanthas], ch_les_polyanthas_2010, L12, L13),
+   replace_vin([ch,la,menotte], ch_la_menotte_2012, L13, L14),
+   replace_vin([fleur,de,pomys], fleur_de_pomys_2012, L14, L15),
+   replace_vin([florilege,pauillac], florilege_pauillac_2011, L15, L16),
+   replace_vin([florilege,saint,julien], florilege_saint_julien_2011, L16, L17),
+   replace_vin([florilege,pomerol], florilege_pomerol_2012, L17, L18),
+   replace_vin([syrah,2015], syrah_2015, L18, L19),
+   replace_vin([cotes,du,rhone,villages,2014], cotes_rhone_villages_2014, L19, L20),
+   replace_vin([tautavel,2014], tautavel_2014, L20, L21),
+   replace_vin([lirac,2015], lirac_2015, L21, L22),
+   replace_vin([cairanne,2014], cairanne_2014, L22, L23),
+   replace_vin([vacqueyras,2014], vacqueyras_2014, L23, L24),
+   replace_vin([saint,joseph,2014], saint_joseph_2014, L24, L25),
+   replace_vin([gigondas,2014], gigondas_2014, L25, L26),
+   replace_vin([chateauneuf,du,pape,rouge], chateauneuf_du_pape_rouge_2013, L26, L27),
+   replace_vin([hermitage,rouge], hermitage_rouge_2007, L27, L28),
+   replace_vin([coteaux,bourguignons], coteaux_bourguignons_2014, L28, L29),
+   replace_vin([bourgogne,pinot,noir], bourgogne_pinot_noir_2014, L29, L30),
+   replace_vin([hautes,cotes,de,nuits], hautes_cotes_de_nuits_2014, L30, L31),
+   replace_vin([savigny,les,beaune], savigny_les_beaune_2014, L31, L32),
+   replace_vin([savigny,les,beaune,'1er',cru,_], savigny_les_beaune_1er_cru_2014, L32, L33),
+   replace_vin([aloxe,corton], aloxe_corton_2014, L33, L34),
+   replace_vin([nuits,saint,georges,'1er',cru], nuits_saint_georges_1er_cru_2013, L34, L35),
+   replace_vin([chambolle,musfigny,'1er',cru], chambolle_musfigny_1er_cru_2012, L35, L36),
+   replace_vin([chiroubles], chiroubles_2013, L36, L37),
+   replace_vin([fleurie], fleurie_2015, L37, L38),
+   replace_vin([moulin,a,vent], moulin_a_vent_2014, L38, L39),
+   replace_vin([chinon,vieilles,vignes], chinon_vieilles_vignes_2014, L39, L40),
+   replace_vin([sancerre,rouge], sancerre_rouge_2015, L40, L41),
+   replace_vin([les,guignards], les_guignards_2015, L41, L42),
+   replace_vin([chardonnay,exception], chardonnay_exception_2016, L42, L43),
+   replace_vin([vire,clesse], vire_clesse_2016, L43, L44),
+   replace_vin([sancerre,blanc], sancerre_blanc_2015, L44, L45),
+   replace_vin([vacqueyras,2016], vacqueyras_2016, L45, L46),
+   replace_vin([hautes,cotes,de,beaume], hautes_cotes_de_beaume_2015, L46, L47),
+   replace_vin([pouilly,fuisse], pouilly_fuisse_2014, L47, L48),
+   replace_vin([chablis,'1er',cru,montmains], chablis_1er_cru_montmains_2014, L48, L49),
+   replace_vin([condrieu,2015], condrieu_2015, L49, L50),
+   replace_vin([cremant,de,loire,brut], cremant_de_loire_brut, L50, L51),
+   replace_vin([champagne,brut,reserve], champagne_brut_reserve, L51, L52),
+   replace_vin([champagne,extra,brut], champagne_extra_brut, L52, L53),
+   replace_vin([champagne,brut,oeil,de,perdrix], champagne_brut_oeil_de_perdrix, L53, L54),
+   replace_vin([champagne,brut,rose,de,saignee], champagne_brut_rose_de_saignee, L54, L55),
+   replace_vin([champagne,brut,or,blanc], champagne_brut_or_blanc, L55, L56),
+   replace_vin([champagne,brut,prestige], champagne_brut_prestige, L56, L57),
+   replace_vin([cognac,trois,etoiles], cognac_trois_etoiles, L57, L58),
+   replace_vin([cognac,fine,champagne], cognac_fine_champagne, L58, L59),
+   replace_vin([cognac,grand,champagne], cognac_grand_champagne, L59, L60),
+
+   L_mots_unif = L60.
+
 replace_vin(L,X,In,Out) :-
    append(L,Suf,In), !, Out = [X|Suf].
 replace_vin(_,_,[],[]) :- !.
 replace_vin(L,X,[H|In],[H|Out]) :-
    replace_vin(L,X,In,Out).
 
-% ----------------------------------------------------------------%
-
-nom(beaumes_de_venise_2015,'Beaumes-de-Venise 2015').
-nom(les_chaboeufs_2013,'Nuits-Saint-Georges 1er Cru 2013, Les Chaboeufs').
-
-prix(beaumes_de_venise_2015, 12.34).
-prix(les_chaboeufs_2013, 42.35).
-
-bouche(beaumes_de_venise_2015, 
-  [ [ 'les aromes de fraise, de violette cotoient les nuances' ],
-    [ 'de baies de genevrier, de sureau et une delicate touche' ],
-    [ 'de fleur d\'oranger. Cette intensite se poursuit en' ],
-    [ 'bouche avec des saveurs juteuses, racees et tres elegantes', '.' ]
-  ]).
-nez(beaumes_de_venise_2015, 
-    [ [ nez, intensement, parfume, '.' ] 
-]).
-description(beaumes_de_venise_2015, 
-    [ [ 'vignoble situe au sud-est des Dentelles de Montmirail', '.' ],
-      [ 'grand vin', '.' ]
-]).
-
-mclef(bouche,10).
-mclef(nez,10).
-mclef(prix,10).
-mclef(vin,5).
-mclef(vins,5).
 
 % ----------------------------------------------------------------%
 
-regle_rep(bouche,1,
-  [ que, donne, le, Vin, en, bouche ],
-  Rep ) :-
+regle_rep(conservation, 0,
+[[conservation, _, Vin],
+[conservation,Vin]
+],
+Rep) :-
+conservation(Vin, Conservation),
+Rep = [['la conservation conseillée de ce vin:', Conservation, '.']].
 
-     bouche(Vin,Rep).
+% ----------------------------------------------------------------%
+regle_rep(bouche, 1,
+[[bouche,_, Vin],
+[Vin, _, bouche]
+],
+Rep ) :-
+bouche(Vin,Rep).
 
 % ----------------------------------------------------------------%
 
-regle_rep(vins,2,
-  [ auriezvous, des, vins, entre, X, et, Y, eur ],
-  Rep) :-
+regle_rep(nez, 2,
+[[nez, _, Vin ],
+[Vin, _, nez]
+],
+Rep) :-
+nez(Vin,Rep).
 
-     lvins_prix_min_max(X,Y,Lvins),
-     rep_lvins_min_max(Lvins,Rep).
+% ----------------------------------------------------------------%
+
+regle_rep(vins,3,
+[[vins, entre, X, et, Y, eur],
+[vins, _, de, X, et, Y, eur]
+],
+Rep) :-
+lvins_prix_min_max(X,Y,Lvins),
+rep_lvins_min_max(Lvins,Rep).
 
 rep_lvins_min_max([], [[ non, '.' ]]).
 rep_lvins_min_max([H|T], [ [ oui, '.', je, dispose, de ] | L]) :-
-   rep_litems_vin_min_max([H|T],L).
+rep_litems_vin_min_max([H|T],L).
 
 rep_litems_vin_min_max([],[]) :- !.
 rep_litems_vin_min_max([(V,P)|L], [Irep|Ll]) :-
-   nom(V,Appellation),
-   Irep = [ '- ', Appellation, '(', P, ' EUR )' ],
-   rep_litems_vin_min_max(L,Ll).
+nom(V,Appellation),
+quantite(V,Q),
+Irep = [ '- ', Appellation, '(', P, ' EUR /', Q, ')' ],
+rep_litems_vin_min_max(L,Ll).
 
 prix_vin_min_max(Vin,P,Min,Max) :-
-   prix(Vin,P),
-   Min =< P, P =< Max.
+prix(Vin,P),
+Min =< P, P =< Max.
 
 lvins_prix_min_max(Min,Max,Lvins) :-
-   findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
-   
+findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
 
+% ----------------------------------------------------------------%
+regle_rep(resume, 8,
+[[resume, _,Vin ],
+[Vin, resume],
+[Vin, _, resume],
+[resume, Vin]
+],
+Rep) :-
+resume(Vin,Rep).
 
+regle_rep(resumer, 8,
+[[resumer, _,Vin ],
+[Vin, resumer],
+[Vin, _, resumer],
+[resumer, Vin]
+],
+Rep) :-
+resume(Vin,Rep).
+
+regle_rep(dire, 4,
+[[dire, _, _,Vin ],
+[dire, _, Vin]
+],
+Rep) :-
+description(Vin,Rep).
+
+% ----------------------------------------------------------------%
+
+regle_rep(vins, 5,
+[[_,autres,vins, _, Region],
+[_,dautres,vins, _, Region],
+[_, Region,_, autres,vins],
+[_, Region,_, dautres,vins]
+],
+Rep) :-
+lvins_region(Region,Lvins),
+length(Lvins, Nb),
+Nbdemi is Nb div 2,
+demi_list_sup(Lvins, Nbdemi, LvinsSup),
+rep_lvins_region(LvinsSup,Rep).
+
+regle_rep(vins, 5,
+[[_,vins, _, Region],
+[_,Region,_, vins]
+],
+Rep) :-
+lvins_region(Region,Lvins),
+length(Lvins, Nb),
+Nbdemi is Nb div 2,
+demi_list_inf(Lvins, Nbdemi, LvinsInf),
+rep_lvins_region(LvinsInf,Rep).
+
+rep_lvins_region([], [[ je, n, '\'', en, ai, pas, '.' ]]).
+rep_lvins_region([H|T], [ [ oui, '.', je, dispose, de ] | L ]) :-
+rep_litems_vin_region([H|T],L).
+
+rep_litems_vin_region([],[]) :- !.
+rep_litems_vin_region([(V,P)|L], [Irep|L1]) :-
+nom(V,Appellation),
+quantite(V,Q),
+Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')' ],
+rep_litems_vin_region(L,L1).
+
+vin_region(Vin,P,Region) :-
+categorie(Vin,Region),
+prix(Vin,P).
+
+lvins_region(Region,Lvins) :-
+findall( (Vin,P), vin_region(Vin,P,Region), Lvins).
+
+demi_list_sup(Src,N,L) :- findall(E, (nth1(I,Src,E), I =< N), L).
+demi_list_inf(Src,N,L) :- findall(E, (nth1(I,Src,E), I > N), L).
+
+% ----------------------------------------------------------------%
+
+regle_rep(appellation, 6,
+[[dire, _, appelation, _, Appellation],
+[recouvre, _, appelation, _, Appellation],
+[appelation, _, Appelation,_, recouvre],
+[details, _, appelation, _, Appelation]
+],
+Rep) :-
+ appellation(Appellation, Rep).
+
+% ----------------------------------------------------------------%
+regle_rep(accompagne, 7,
+[[accompagne, _,Viande],
+ [accompagne,Viande]
+],
+Rep) :-
+  vin_nourriture(Viande, Description, Lvins),
+  rep_litems_vin_accompagne(Lvins, LvinsA),
+  union([Description], LvinsA, Rep).
+
+rep_litems_vin_accompagne([],[]) :- !.
+rep_litems_vin_accompagne([V|L], [Irep|L1]) :-
+	nom(V,Appellation),
+  prix(V,P),
+	quantite(V,Q),
+	Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')'],
+	rep_litems_vin_accompagne(L,L1).
 
 /* --------------------------------------------------------------------- */
 /*                                                                       */
@@ -131,7 +296,7 @@ lvins_prix_min_max(Min,Max,Lvins) :-
 /*                                                                       */
 /* --------------------------------------------------------------------- */
 
-% lire_question(L_Mots) 
+% lire_question(L_Mots)
 
 lire_question(LMots) :- read_atomics(LMots).
 
@@ -196,7 +361,7 @@ extract_word([C|Chars],Rest,[C|RestOfWord]) :-
 	extract_word_aux(Type,Chars,Rest,RestOfWord).
 
 extract_word_aux(special,Rest,Rest,[]) :- !.
-   % if Char is special, don't read more chars.
+   % if Char is special, do not read more chars.
 
 extract_word_aux(Type,[C|Chars],Rest,[C|RestOfWord]) :-
 	my_char_type(C,Type), !,
@@ -318,24 +483,24 @@ ecrire_reponse(L) :-
 
 % ecrire_li_reponse(Ll,M,E)
 % input : Ll, liste de listes de mots (tout en minuscules)
-%         M, indique si le premier caractere du premier mot de 
+%         M, indique si le premier caractere du premier mot de
 %            la premiere ligne doit etre mis en majuscule (1 si oui, 0 si non)
-%         E, indique le nombre d'espaces avant ce premier mot 
+%         E, indique le nombre d espaces avant ce premier mot
 
-ecrire_li_reponse([],_,_) :- 
+ecrire_li_reponse([],_,_) :-
     nl.
 
-ecrire_li_reponse([Li|Lls],Mi,Ei) :- 
+ecrire_li_reponse([Li|Lls],Mi,Ei) :-
    ecrire_ligne(Li,Mi,Ei,Mf),
    ecrire_li_reponse(Lls,Mf,2).
 
 % ecrire_ligne(Li,Mi,Ei,Mf)
 % input : Li, liste de mots a ecrire
 %         Mi, Ei booleens tels que decrits ci-dessus
-% output : Mf, booleen tel que decrit ci-dessus a appliquer 
+% output : Mf, booleen tel que decrit ci-dessus a appliquer
 %          a la ligne suivante, si elle existe
 
-ecrire_ligne([],M,_,M) :- 
+ecrire_ligne([],M,_,M) :-
    nl.
 
 ecrire_ligne([M|L],Mi,Ei,Mf) :-
@@ -344,10 +509,10 @@ ecrire_ligne([M|L],Mi,Ei,Mf) :-
 
 % ecrire_mot(M,B1,B2,E1,E2)
 % input : M, le mot a ecrire
-%         B1, indique s'il faut une majuscule (1 si oui, 0 si non)
-%         E1, indique s'il faut un espace avant le mot (1 si oui, 0 si non)
+%         B1, indique si il faut une majuscule (1 si oui, 0 si non)
+%         E1, indique si il faut un espace avant le mot (1 si oui, 0 si non)
 % output : B2, indique si le mot suivant prend une majuscule
-%          E2, indique si le mot suivant doit etre precede d'un espace
+%          E2, indique si le mot suivant doit etre precede d un espace
 
 ecrire_mot('.',_,1,_,1) :-
    write('. '), !.
@@ -382,20 +547,20 @@ fin(L) :- member(fin,L).
 /*                                                                       */
 /* --------------------------------------------------------------------- */
 
-grandgousier :- 
+grandgousier :-
 
    nl, nl, nl,
    write('Bonjour, je suis Grandgousier, GGS pour les intimes,'), nl,
-   write('conseiller en vin. En quoi puis-je vous etre utile ?'), 
-   nl, nl, 
+   write('conseiller en vin. En quoi puis-je vous etre utile ?'),
+   nl, nl,
 
    repeat,
       write('Vous : '),
       lire_question(L_Mots),
-      produire_reponse(L_Mots,L_ligne_reponse),
+      produire_reponse(L_Mots, L_ligne_reponse),
       ecrire_reponse(L_ligne_reponse),
    fin(L_Mots), !.
-   
+
 
 /* --------------------------------------------------------------------- */
 /*                                                                       */
@@ -404,13 +569,3 @@ grandgousier :-
 /* --------------------------------------------------------------------- */
 
 :- grandgousier.
-
-
-
-
-
-
-
-
-
-
