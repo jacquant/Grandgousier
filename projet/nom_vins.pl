@@ -1,0 +1,73 @@
+nom_vins_uniforme(Lmots,L_mots_unif) :-
+   L1 = Lmots,
+   replaces_vin([[beaumes,de,venise], [beaumes,de,venise,2015]],beaumes_de_venise_2015,L1,L2),
+   replaces_vin([[ch, bois,vert], [cuvee, elegance,2014],[ch,bois,vert,_]],ch_bois_vert_cuvee_elegance_2014,L2,L3),
+   replace_vin([ch,moulin,maillet], ch_moulin_maillet_2014, L3, L4),
+   replace_vin([ch,fleur,baudron], ch_fleur_baudron_2014, L4, L5),
+   replace_vin([ch,paret], ch_paret_2012, L5, L6),
+   replace_vin([ch,menota,cuvee,montgarede], ch_menota_cuvee_montgarede_2014, L6, L7),
+   replace_vin([madiran,vieilles,vignes], madiran_vieilles_vignes_2016, L7, L8),
+   replace_vin([ch,moulin,neuf,cuvee,prestige], ch_moulin_neuf_cuvee_prestige_2014, L8, L9),
+   replace_vin([ch,milon,la,grave,cuvee,part], ch_milon_la_grave_cuvee_part, L9, L10),
+   replace_vin([ch,roc,de,binet], ch_roc_de_binet_2010, L10, L11),
+   replace_vin([ch,ruat,petit,poujeaux], ch_ruat_petit_poujeaux_2010, L11, L12),
+   replace_vin([ch,les,polyanthas], ch_les_polyanthas_2010, L12, L13),
+   replace_vin([ch,la,menotte], ch_la_menotte_2012, L13, L14),
+   replace_vin([fleur,de,pomys], fleur_de_pomys_2012, L14, L15),
+   replace_vin([florilege,pauillac], florilege_pauillac_2011, L15, L16),
+   replace_vin([florilege,saint,julien], florilege_saint_julien_2011, L16, L17),
+   replace_vin([florilege,pomerol], florilege_pomerol_2012, L17, L18),
+   replace_vin([syrah,2015], syrah_2015, L18, L19),
+   replace_vin([cotes,du,rhone,villages,2014], cotes_rhone_villages_2014, L19, L20),
+   replace_vin([tautavel,2014], tautavel_2014, L20, L21),
+   replace_vin([lirac,2015], lirac_2015, L21, L22),
+   replace_vin([cairanne,2014], cairanne_2014, L22, L23),
+   replace_vin([vacqueyras,2014], vacqueyras_2014, L23, L24),
+   replace_vin([saint,joseph,2014], saint_joseph_2014, L24, L25),
+   replace_vin([gigondas,2014], gigondas_2014, L25, L26),
+   replace_vin([chateauneuf,du,pape,rouge], chateauneuf_du_pape_rouge_2013, L26, L27),
+   replace_vin([hermitage,rouge], hermitage_rouge_2007, L27, L28),
+   replace_vin([coteaux,bourguignons], coteaux_bourguignons_2014, L28, L29),
+   replace_vin([bourgogne,pinot,noir], bourgogne_pinot_noir_2014, L29, L30),
+   replace_vin([hautes,cotes,de,nuits], hautes_cotes_de_nuits_2014, L30, L31),
+   replace_vin([savigny,les,beaune], savigny_les_beaune_2014, L31, L32),
+   replace_vin([savigny,les,beaune,'1er',cru,_], savigny_les_beaune_1er_cru_2014, L32, L33),
+   replace_vin([aloxe,corton], aloxe_corton_2014, L33, L34),
+   replaces_vin([[_,chaboeufs,2013],[chaboeufs,2013], [chaboeufs], [nuits, saint, georges],[nuits,saint,georges,'1er',cru]], nuits_saint_georges_1er_cru_2013, L34, L35),
+   replace_vin([chambolle,musfigny,'1er',cru], chambolle_musfigny_1er_cru_2012, L35, L36),
+   replace_vin([chiroubles], chiroubles_2013, L36, L37),
+   replace_vin([fleurie], fleurie_2015, L37, L38),
+   replace_vin([moulin,a,vent], moulin_a_vent_2014, L38, L39),
+   replace_vin([chinon,vieilles,vignes], chinon_vieilles_vignes_2014, L39, L40),
+   replace_vin([sancerre,rouge], sancerre_rouge_2015, L40, L41),
+   replace_vin([les,guignards], les_guignards_2015, L41, L42),
+   replace_vin([chardonnay,exception], chardonnay_exception_2016, L42, L43),
+   replace_vin([vire,clesse], vire_clesse_2016, L43, L44),
+   replace_vin([sancerre,blanc], sancerre_blanc_2015, L44, L45),
+   replace_vin([vacqueyras,2016], vacqueyras_2016, L45, L46),
+   replace_vin([hautes,cotes,de,beaume], hautes_cotes_de_beaume_2015, L46, L47),
+   replace_vin([pouilly,fuisse], pouilly_fuisse_2014, L47, L48),
+   replace_vin([chablis,'1er',cru,montmains], chablis_1er_cru_montmains_2014, L48, L49),
+   replace_vin([condrieu,2015], condrieu_2015, L49, L50),
+   replace_vin([cremant,de,loire,brut], cremant_de_loire_brut, L50, L51),
+   replace_vin([champagne,brut,reserve], champagne_brut_reserve, L51, L52),
+   replace_vin([champagne,extra,brut], champagne_extra_brut, L52, L53),
+   replace_vin([champagne,brut,oeil,de,perdrix], champagne_brut_oeil_de_perdrix, L53, L54),
+   replace_vin([champagne,brut,rose,de,saignee], champagne_brut_rose_de_saignee, L54, L55),
+   replace_vin([champagne,brut,or,blanc], champagne_brut_or_blanc, L55, L56),
+   replace_vin([champagne,brut,prestige], champagne_brut_prestige, L56, L57),
+   replace_vin([cognac,trois,etoiles], cognac_trois_etoiles, L57, L58),
+   replace_vin([cognac,fine,champagne], cognac_fine_champagne, L58, L59),
+   replace_vin([cognac,grand,champagne], cognac_grand_champagne, L59, L60),
+
+   L_mots_unif = L60.
+
+   replaces_vin([P|List], X, In, Out) :-
+     replace_vin(P, X, In, Out);
+     replaces_vin(List, X, In, Out).
+
+   replace_vin(L,X,In,Out) :-
+      append(L,Suf,In), !, Out = [X|Suf].
+   replace_vin(_,_,[],[]) :- !.
+   replace_vin(L,X,[H|In],[H|Out]) :-
+      replace_vin(L,X,In,Out).
