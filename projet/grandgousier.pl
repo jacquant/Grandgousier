@@ -1,23 +1,3 @@
-/* --------------------------------------------------------------------- */
-/*                                                                       */
-/*        PRODUIRE_REPONSE(L_Mots,L_Lignes_reponse) :                    */
-/*                                                                       */
-/*        Input : une liste de mots L_Mots representant la question      */
-/*                de l'utilisateur                                       */
-/*        Output : une liste de liste de lignes correspondant a la       */
-/*                 reponse fournie par le bot                            */
-/*                                                                       */
-/*        NB Pour l'instant le predicat retourne dans tous les cas       */
-/*            [  [je, ne, sais, pas, '.'],                               */
-/*               [les, etudiants, vont, m, '\'', aider, '.'],            */
-/*               ['vous le verrez !']                                    */
-/*            ]                                                          */
-/*                                                                       */
-/*        Je ne doute pas que ce sera le cas ! Et vous souhaite autant   */
-/*        d'amusement a coder le predicat que j'ai eu a ecrire           */
-/*        cet enonce et ce squelette de solution !                       */
-/*                                                                       */
-/* --------------------------------------------------------------------- */
 sr([beaume|X],[beaumes|Y],X,Y).
 sr([chateau|X],[ch|Y],X,Y).
 sr([st|X],[saint|Y],X,Y).
@@ -25,6 +5,9 @@ sr([premier|X],['1er'|Y],X,Y).
 sr([champ|X],[champagne|Y],X,Y).
 sr([euro|X],[eur|Y],X,Y).
 sr([euros|X],[eur|Y],X,Y).
+sr([lappellation|X],[appellation|Y],X,Y).
+sr([appelation|X],[appellation|Y],X,Y).
+sr([lappelation|X],[appellation|Y],X,Y).
 /*                      !!!    A MODIFIER   !!!                          */
 
 :- style_check(-discontiguous).
@@ -119,27 +102,11 @@ lvins_prix_min_max(Min,Max,Lvins) :-
 findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
 
 % ----------------------------------------------------------------%
-regle_rep(resume, 8,
-[[resume, _,Vin ],
-[Vin, resume],
-[Vin, _, resume],
-[resume, Vin]
-],
-Rep) :-
-resume(Vin,Rep).
-
-regle_rep(resumer, 8,
-[[resumer, _,Vin ],
-[Vin, resumer],
-[Vin, _, resumer],
-[resumer, Vin]
-],
-Rep) :-
-resume(Vin,Rep).
-
 regle_rep(dire, 4,
-[[dire, _, _,Vin ],
-[dire, _, Vin]
+[[dire, _, _,Vin],
+[_,dire, _, _,Vin],
+[dire, _, Vin],
+[_,dire, _, Vin]
 ],
 Rep) :-
 description(Vin,Rep).
@@ -196,6 +163,7 @@ demi_list_inf(Src,N,L) :- findall(E, (nth1(I,Src,E), I > N), L).
 regle_rep(appellation, 6,
 [[dire, _, appelation, _, Appellation],
 [recouvre, _, appelation, _, Appellation],
+[recouvre, appelation, _, Appellation],
 [appelation, _, Appelation,_, recouvre],
 [details, _, appelation, _, Appelation]
 ],
@@ -212,6 +180,15 @@ Rep) :-
   rep_litems_vin_accompagne(Lvins, LvinsA),
   union([Description], LvinsA, Rep).
 
+regle_rep(accompagner, 7,
+[[accompagner, _,Viande],
+ [accompagner,Viande]
+],
+Rep) :-
+  vin_nourriture(Viande, Description, Lvins),
+  rep_litems_vin_accompagne(Lvins, LvinsA),
+  union([Description], LvinsA, Rep).
+
 rep_litems_vin_accompagne([],[]) :- !.
 rep_litems_vin_accompagne([V|L], [Irep|L1]) :-
 	nom(V,Appellation),
@@ -219,6 +196,29 @@ rep_litems_vin_accompagne([V|L], [Irep|L1]) :-
 	quantite(V,Q),
 	Irep = [ '- ', Appellation, '(', P, ' EUR ', Q, ')'],
 	rep_litems_vin_accompagne(L,L1).
+
+  % ----------------------------------------------------------------%
+
+  regle_rep(resume, 8,
+  [[resume, _,Vin ],
+  [Vin, resume],
+  [Vin, _, resume],
+  [resume, Vin]
+  ],
+  Rep) :-
+  resume(Vin,Rep).
+
+  regle_rep(resumer, 8,
+  [[resumer, _,Vin ],
+  [Vin, resumer],
+  [Vin, _, resumer],
+  [resumer, Vin]
+  ],
+  Rep) :-
+  resume(Vin,Rep).
+
+
+  % ----------------------------------------------------------------%
 
 /* --------------------------------------------------------------------- */
 /*                                                                       */

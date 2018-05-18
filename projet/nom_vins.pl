@@ -70,7 +70,7 @@ nom_vins_uniforme(Lmots,L_mots_unif) :-
 
  replaces_vin([],_,_,_) :- !.
  replaces_vin([P|List], X, In, Out) :-
-   replace_vin(P, X, In, Out),! , 
+   replace_vin(P, X, In, Out);
    replaces_vin(List, X, In, Out).
 
  replace_vin(L,X,In,Out) :-
