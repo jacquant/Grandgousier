@@ -22,7 +22,7 @@ sr([beaume|X],[beaumes|Y],X,Y).
 sr([chateau|X],[ch|Y],X,Y).
 sr([st|X],[saint|Y],X,Y).
 sr([premier|X],['1er'|Y],X,Y).
-sr([ch|X],[champagne|Y],X,Y).
+sr([champ|X],[champagne|Y],X,Y).
 sr([euro|X],[eur|Y],X,Y).
 sr([euros|X],[eur|Y],X,Y).
 /*                      !!!    A MODIFIER   !!!                          */
