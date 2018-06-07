@@ -3,6 +3,8 @@ sr([chateau|X],[ch|Y],X,Y).
 sr([st|X],[saint|Y],X,Y).
 sr([premier|X],['1er'|Y],X,Y).
 sr([champ|X],[champagne|Y],X,Y).
+sr([resume|X],[resumer|Y],X,Y).
+sr([dautres|X],[autres|Y],X,Y).
 sr([euro|X],[eur|Y],X,Y).
 sr([euros|X],[eur|Y],X,Y).
 sr([lappellation|X],[appellation|Y],X,Y).
@@ -19,14 +21,16 @@ produire_reponse([fin],[L1]) :-
 
 produire_reponse(L,Rep) :-
   simplify(L, LS),
-  mclef(M,_), member(M,LS),
-  clause(regle_rep(M,_,LPattern,Rep),Body),
+  mclef(M,Val), member(M,LS),
+  clause(regle_rep(M,Val,LPattern,Rep),Body),
   check_patterns(LPattern,LS),
   call(Body), !.
 
 check_patterns([], _) :- false.
+check_patterns([HeadPattern|_],L):-
+	match_pattern(HeadPattern, L), !.
 check_patterns([HeadPattern|Pattern], L):-
-  match_pattern(HeadPattern, L);
+  not(match_pattern(HeadPattern, L)),
   check_patterns(Pattern, L).
 
 simplify(List,Result) :-
@@ -36,10 +40,10 @@ simplify(List,Result) :-
 simplify([W|Words],[W|NewWords]) :- simplify(Words,NewWords).
 simplify([],[]).
 
-match_pattern([],_) :- false.
 match_pattern(Pattern,Lmots) :-
    nom_vins_uniforme(Lmots,L_mots_unif),
-   sublist(Pattern,L_mots_unif).
+   sublist(Pattern, L_mots_unif),
+   write(match).
 
 sublist(SL,L) :-
    prefix(SL,L), !.
@@ -48,7 +52,7 @@ sublist(SL,[_|T]) :- sublist(SL,T).
 
 % ----------------------------------------------------------------%
 
-regle_rep(conservation, 0,
+regle_rep(conservation, 1,
 [[conservation, _, Vin],
 [conservation,Vin]
 ],
@@ -66,7 +70,7 @@ bouche(Vin,Rep).
 
 % ----------------------------------------------------------------%
 
-regle_rep(nez, 2,
+regle_rep(nez, 1,
 [[nez, _, Vin ],
 [Vin, _, nez]
 ],
@@ -75,9 +79,8 @@ nez(Vin,Rep).
 
 % ----------------------------------------------------------------%
 
-regle_rep(vins,3,
-[[vins, entre, X, et, Y, eur],
-[vins, _, de, X, et, Y, eur]
+regle_rep(entre,1,
+[[vins, entre, X, et, Y, eur]
 ],
 Rep) :-
 lvins_prix_min_max(X,Y,Lvins),
@@ -102,7 +105,7 @@ lvins_prix_min_max(Min,Max,Lvins) :-
 findall( (Vin,P) , prix_vin_min_max(Vin,P,Min,Max), Lvins ).
 
 % ----------------------------------------------------------------%
-regle_rep(dire, 4,
+regle_rep(dire, 1,
 [[dire, _, _,Vin],
 [_,dire, _, _,Vin],
 [dire, _, Vin],
@@ -113,11 +116,9 @@ description(Vin,Rep).
 
 % ----------------------------------------------------------------%
 
-regle_rep(vins, 5,
+regle_rep(autres, 1,
 [[_,autres,vins, _, Region],
-[_,dautres,vins, _, Region],
-[_, Region,_, autres,vins],
-[_, Region,_, dautres,vins]
+[_, Region,_, autres,vins]
 ],
 Rep) :-
 lvins_region(Region,Lvins),
@@ -126,7 +127,9 @@ Nbdemi is Nb div 2,
 demi_list_sup(Lvins, Nbdemi, LvinsSup),
 rep_lvins_region(LvinsSup,Rep).
 
-regle_rep(vins, 5,
+% ----------------------------------------------------------------%
+
+regle_rep(vins, 1,
 [[_,vins, _, Region],
 [_,Region,_, vins]
 ],
@@ -160,7 +163,7 @@ demi_list_inf(Src,N,L) :- findall(E, (nth1(I,Src,E), I > N), L).
 
 % ----------------------------------------------------------------%
 
-regle_rep(appellation, 6,
+regle_rep(appellation, 1,
 [[dire, _, appelation, _, Appellation],
 [recouvre, _, appelation, _, Appellation],
 [recouvre, appelation, _, Appellation],
@@ -171,7 +174,7 @@ Rep) :-
  appellation(Appellation, Rep).
 
 % ----------------------------------------------------------------%
-regle_rep(accompagne, 7,
+regle_rep(accompagne, 1,
 [[accompagne, _,Viande],
  [accompagne,Viande]
 ],
@@ -199,16 +202,7 @@ rep_litems_vin_accompagne([V|L], [Irep|L1]) :-
 
   % ----------------------------------------------------------------%
 
-  regle_rep(resume, 8,
-  [[resume, _,Vin ],
-  [Vin, resume],
-  [Vin, _, resume],
-  [resume, Vin]
-  ],
-  Rep) :-
-  resume(Vin,Rep).
-
-  regle_rep(resumer, 8,
+  regle_rep(resumer, 1,
   [[resumer, _,Vin ],
   [Vin, resumer],
   [Vin, _, resumer],

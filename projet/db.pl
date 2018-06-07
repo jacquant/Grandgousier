@@ -3,18 +3,19 @@
 /*        MOTS CLÉS            */
 /*                             */
 /* --------------------------- */
-mclef(conservation,12).
-mclef(accompagne, 11).
-mclef(resume,2).
-mclef(resumer,2).
-mclef(appellation, 10).
-mclef(bouche,10).
-mclef(nez,10).
-mclef(prix,10).
-mclef(categorie,7).
-mclef(vin,5).
-mclef(vins,5).
-mclef(dire,2).
+mclef(conservation,1).
+mclef(accompagne, 1).
+mclef(resumer,1).
+mclef(appellation, 1).
+mclef(bouche,1).
+mclef(nez,1).
+mclef(prix,1).
+mclef(categorie,1).
+mclef(vin,1).
+mclef(entre,1).
+mclef(autres,1).
+mclef(vins,1).
+mclef(dire,1).
 
 /* --------------------------- */
 /*                             */
