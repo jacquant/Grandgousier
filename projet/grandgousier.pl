@@ -1,3 +1,5 @@
+:- use_module(library(lists)).
+
 sr([beaume|X],[beaumes|Y],X,Y).
 sr([chateau|X],[ch|Y],X,Y).
 sr([st|X],[saint|Y],X,Y).
@@ -42,8 +44,7 @@ simplify([],[]).
 
 match_pattern(Pattern,Lmots) :-
    nom_vins_uniforme(Lmots,L_mots_unif),
-   sublist(Pattern, L_mots_unif),
-   write(match).
+   sublist(Pattern, L_mots_unif).
 
 sublist(SL,L) :-
    prefix(SL,L), !.
